@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVITINO.TV — Вариант 2: Редакция</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #1a1008;
+      --paper:  #f5f0e8;
+      --warm:   #2a1f0f;
+      --amber:  #c8861a;
+      --amber2: #a86e10;
+      --muted:  #7a6a50;
+      --rule:   #d4c8b0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(245, 240, 232, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem; height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Newsreader', serif;
+      font-size: 1.2rem; font-weight: 700;
+      letter-spacing: 0.04em; color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-logo em { font-style: italic; color: var(--amber); }
+    .nav-links { display: flex; gap: 0; list-style: none; }
+    .nav-links a {
+      display: block; padding: 0.4rem 0.8rem;
+      font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-burger { display: none; flex-direction: column; gap: 4px;
+      background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-burger span { display: block; width: 22px; height: 1.5px; background: var(--ink); }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding-top: 60px;
+    }
+
+    .hero-main {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      position: relative;
+    }
+
+    .hero-issue {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 2.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hero-issue::before, .hero-issue::after {
+      content: ''; flex: 1; height: 1px; background: var(--rule);
+      max-width: 80px;
+    }
+
+    .hero-kicker {
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 1.25rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero h1 {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(4rem, 12vw, 9rem);
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25em;
+      color: var(--ink);
+    }
+    .hero h1 .dot { color: var(--amber); font-style: italic; }
+    .hero h1 .tv { color: var(--amber); }
+
+    .hero-rule { width: 60px; height: 2px; background: var(--amber); margin: 1.5rem auto; }
+
+    .hero-sub {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      font-style: italic;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 3rem;
+    }
+
+    .hero-buttons {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.7rem 1.75rem;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--ink); color: var(--paper);
+    }
+    .btn-primary:hover { background: var(--amber); }
+    .btn-outline {
+      background: transparent; color: var(--ink);
+      border: 1px solid var(--rule);
+    }
+    .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
+
+    /* ── Bottom strip ── */
+    .hero-strip {
+      border-top: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+    .strip-item {
+      padding: 1.25rem 1rem;
+      border-right: 1px solid var(--rule);
+      display: flex; flex-direction: column; gap: 0.25rem;
+    }
+    .strip-item:last-child { border-right: none; }
+    .strip-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .strip-val { font-family: 'Newsreader', serif; font-size: 1.1rem; font-weight: 600; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 2px solid var(--ink);
+      padding: 1.5rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    footer strong { font-family: 'Newsreader', serif; font-size: 0.9rem; color: var(--ink); }
+
+    .version-badge {
+      position: fixed; bottom: 1rem; right: 1rem;
+      background: var(--amber); color: #fff;
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+      border-radius: 2px;
+      z-index: 200;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1rem; }
+      .nav-links {
+        position: fixed; top: 60px; left: 0; right: 0;
+        background: rgba(245,240,232,0.98);
+        border-bottom: 1px solid var(--rule);
+        flex-direction: column; padding: 0.5rem;
+        transform: translateY(-120%); transition: transform 0.3s;
+      }
+      .nav-links.open { transform: translateY(0); }
+      .nav-links a { padding: 0.65rem 1rem; font-size: 0.9rem; }
+      .nav-burger { display: flex; }
+      .hero-strip { grid-template-columns: 1fr; }
+      .strip-item { border-right: none; border-bottom: 1px solid var(--rule); }
+      .strip-item:last-child { border-bottom: none; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
+  <button class="nav-burger" aria-label="Меню" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="tv.html">Свитино ТВ</a></li>
+    <li><a href="heroes.html">Герои</a></li>
+    <li><a href="film.html">Фильм</a></li>
+    <li><a href="news.html">Новости</a></li>
+    <li><a href="projects.html">Проекты</a></li>
+    <li><a href="contacts.html">Контакты</a></li>
+  </ul>
+</nav>
+
+<main class="hero">
+  <div class="hero-main">
+    <div class="hero-issue">Медиа-платформа &nbsp;·&nbsp; Сезон I</div>
+    <div class="hero-kicker">Живая медиа-платформа</div>
+    <h1>SVITINO<span class="dot">.</span><span class="tv">TV</span></h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">О людях, проектах, историях и жизни Свитино.</p>
+    <p class="hero-note">Первый сезон уже начался</p>
+    <div class="hero-buttons">
+      <a href="tv.html" class="btn btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        Свитино ТВ
+      </a>
+      <a href="heroes.html" class="btn btn-outline">Герои проекта</a>
+      <a href="contacts.html" class="btn btn-outline">Стать участником</a>
+    </div>
+  </div>
+
+  <div class="hero-strip">
+    <div class="strip-item">
+      <span class="strip-label">Сезон</span>
+      <span class="strip-val">Первый</span>
+    </div>
+    <div class="strip-item">
+      <span class="strip-label">Формат</span>
+      <span class="strip-val">Документальный</span>
+    </div>
+    <div class="strip-item">
+      <span class="strip-label">Статус</span>
+      <span class="strip-val">В эфире</span>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <strong>SVITINO.TV</strong>
+  <span>Живая медиа-платформа &nbsp;·&nbsp; 2025</span>
+</footer>
+
+<div class="version-badge">Вариант 2 — Редакция</div>
+
+</body>
+</html>
