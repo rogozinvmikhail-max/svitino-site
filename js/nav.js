@@ -1,27 +1,26 @@
-// Mobile burger menu toggle
-document.addEventListener('DOMContentLoaded', function () {
-  const burger = document.querySelector('.nav-burger');
-  const links = document.querySelector('.nav-links');
+// SVITINO.TV — nav
 
-  if (burger && links) {
-    burger.addEventListener('click', function () {
-      links.classList.toggle('open');
-    });
+const burger = document.querySelector('.nav-burger');
+const links  = document.querySelector('.nav-links');
 
-    // Close menu on link click
-    links.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        links.classList.remove('open');
-      });
-    });
-  }
+if (burger && links) {
+  burger.addEventListener('click', () => {
+    links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', links.classList.contains('open'));
+  });
 
-  // Mark active nav link
-  var path = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(function (a) {
-    var href = a.getAttribute('href');
-    if (href === path || (path === '' && href === 'index.html')) {
-      a.classList.add('active');
+  document.addEventListener('click', (e) => {
+    if (!burger.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
     }
   });
+}
+
+// Active link
+const current = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a').forEach(a => {
+  const href = a.getAttribute('href');
+  if (href === current || (current === '' && href === 'index.html')) {
+    a.classList.add('active');
+  }
 });
