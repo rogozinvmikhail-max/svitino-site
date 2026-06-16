@@ -1,91 +1,123 @@
-/* SVITINO.TV — Новая версия. Документальный стиль. */
+/* ═══════════════════════════════════════════════
+   SVITINO.TV — Камень и Сталь
+   Арт-директор: каждый выбор обоснован местом.
+   
+   Цвета — с натуры:
+   Белый камень (галька)  → #f0ece4
+   Мокрый асфальт        → #2a2825
+   Металл мемориала      → #1a1916
+   Ржавчина / тёплый     → #b5802e
+   Тёмный ельник         → #2d4a30
+   Серая галька           → #8a8780
+   
+   Типографика:
+   Oswald — сжатый жирный → как надписи на стальных табличках
+   PT Serif — архивный тёплый → как старые документы
+   Inter — нейтральный интерфейс
+   ═══════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap');
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --ink:     #1c1c19;
-  --paper:   #f0ece2;
-  --stone:   #7a7267;
-  --pebble:  #c8c3b5;
-  --amber:   #c4863a;
-  --amber2:  #a06828;
-  --fir:     #3d5c40;
-  --card-bg: #242420;
-  --border:  rgba(200,195,181,0.18);
-  --border2: rgba(200,195,181,0.32);
-  --nav-h:   64px;
-  --serif:   'PT Serif', Georgia, serif;
-  --sans:    'Inter', system-ui, -apple-system, sans-serif;
+  /* Материальная палитра */
+  --stone:        #f0ece4;   /* белый камень */
+  --stone-warm:   #e6e0d4;   /* тёплый камень */
+  --stone-mid:    #c8c2b6;   /* серая галька */
+  --steel:        #1a1916;   /* тёмная сталь */
+  --steel-mid:    #2a2825;   /* мокрый асфальт */
+  --steel-light:  #3d3a35;   /* выгоревшая сталь */
+  --rust:         #b5802e;   /* ржавчина / акцент */
+  --rust-dark:    #8a6020;   /* тёмная ржавчина */
+  --fir:          #2d4a30;   /* тёмный ельник */
 
-  /* Gabion mesh pattern */
-  --gabion: repeating-linear-gradient(
-      rgba(200,195,181,0.10) 0px, rgba(200,195,181,0.10) 1px,
-      transparent 1px, transparent 22px),
-    repeating-linear-gradient(
-      90deg,
-      rgba(200,195,181,0.10) 0px, rgba(200,195,181,0.10) 1px,
-      transparent 1px, transparent 22px);
+  /* Текст */
+  --text-strong:  var(--steel);
+  --text-body:    #3d3a35;
+  --text-muted:   #6e6b64;
+  --text-faint:   #9a9790;
+
+  /* Шрифты */
+  --display:      'Oswald', 'Arial Narrow', sans-serif;
+  --serif:        'PT Serif', Georgia, serif;
+  --sans:         'Inter', system-ui, sans-serif;
+
+  --nav-h: 60px;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--stone);
+  color: var(--text-body);
   font-family: var(--sans);
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.6;
   min-height: 100vh;
 }
 
 a { color: inherit; text-decoration: none; }
 
-/* ── Nav ────────────────────────────────────── */
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 
-nav {
+
+/* ═══ NAV ═══════════════════════════════════════ */
+
+.nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-h);
-  background: rgba(28,28,25,0.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  background: var(--steel);
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .nav-logo {
-  font-family: var(--serif);
-  font-size: 1.2rem;
+  font-family: var(--display);
+  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--paper);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
 }
-.nav-logo em { font-style: italic; color: var(--amber); }
+
+.nav-logo-main { color: var(--stone); }
+.nav-logo-dot  { color: var(--rust); }
+.nav-logo-tv   { color: var(--rust); font-style: italic; }
 
 .nav-links {
   display: flex;
-  gap: 0;
   list-style: none;
+  gap: 0;
 }
 
 .nav-links a {
   display: block;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.07em;
+  padding: 0.4rem 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
   transition: color 0.2s;
 }
 
 .nav-links a:hover,
-.nav-links a.active { color: var(--paper); }
-.nav-links a.active { color: var(--amber); }
+.nav-links a.active { color: var(--stone); }
+.nav-links a.active { color: var(--rust); }
 
 .nav-burger {
   display: none;
@@ -100,72 +132,56 @@ nav {
   display: block;
   width: 22px;
   height: 1.5px;
-  background: var(--paper);
-  border-radius: 1px;
+  background: var(--stone);
   transition: all 0.3s;
 }
 
-/* ── Page wrapper ────────────────────────────── */
 
-.page {
-  padding-top: var(--nav-h);
-  min-height: 100vh;
-}
-
-/* ── Hero (главная) ──────────────────────────── */
+/* ═══ HERO ═══════════════════════════════════════
+   Сцена: тёмный стальной фон (как козырёк мемориала)
+   Каменный паттерн просвечивает сквозь темноту
+   Текст — белый камень на чёрной стали
+   ════════════════════════════════════════════════ */
 
 .hero {
-  min-height: calc(100vh - var(--nav-h));
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  background: var(--steel);
   display: grid;
   grid-template-rows: 1fr auto;
   position: relative;
   overflow: hidden;
 }
 
-/* Archive photo wall — decorative grid behind hero */
-.hero-bg {
+.hero-stones {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  gap: 3px;
-  opacity: 0.08;
+  opacity: 1;
   pointer-events: none;
 }
 
-.hero-bg-cell {
-  background: var(--pebble);
-  border-radius: 1px;
+.stones-svg {
+  width: 100%;
+  height: 100%;
 }
 
-.hero-bg-cell:nth-child(3n)   { opacity: 0.6; }
-.hero-bg-cell:nth-child(5n)   { opacity: 0.9; }
-.hero-bg-cell:nth-child(7n+1) { opacity: 0.3; }
-
-/* Gabion overlay */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: var(--gabion);
-  pointer-events: none;
-  opacity: 0.6;
-  z-index: 0;
-}
-
-/* Bottom fade */
+/* Gradients: наверху темнее (козырёк), книзу светлеет (стена) */
 .hero::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 200px;
-  background: linear-gradient(transparent, var(--ink));
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(26,25,22,0.92) 0%,
+      rgba(26,25,22,0.75) 40%,
+      rgba(26,25,22,0.85) 80%,
+      rgba(26,25,22,0.95) 100%
+    );
   pointer-events: none;
-  z-index: 1;
 }
 
-.hero-main {
+.hero-content {
   position: relative;
   z-index: 2;
   display: flex;
@@ -174,691 +190,1086 @@ nav {
   justify-content: center;
   text-align: center;
   padding: 5rem 2rem 3rem;
+  gap: 0;
 }
 
-.hero-eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+.hero-location {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--stone);
-  margin-bottom: 2rem;
+  color: var(--stone-mid);
+  margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.hero-eyebrow::before,
-.hero-eyebrow::after {
+.hero-location::before,
+.hero-location::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--border2);
-  max-width: 60px;
+  background: rgba(200,194,182,0.2);
+  max-width: 50px;
 }
 
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(4rem, 12vw, 9rem);
+/* Главный заголовок: сжатый жирный = как надпись СВИТИНО из камня */
+.hero-title {
+  font-family: var(--display);
+  font-size: clamp(5rem, 16vw, 12rem);
   font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  margin-bottom: 0.15em;
-  color: var(--paper);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  margin-bottom: 1.5rem;
 }
 
-.hero h1 .dot { color: var(--amber); font-style: italic; }
-.hero h1 .tv  { color: var(--amber); font-style: italic; }
-
-.hero-rule {
-  width: 48px;
-  height: 2px;
-  background: var(--amber);
-  margin: 1.5rem auto;
+.hero-title-main { color: var(--stone); }
+.hero-title-dot  { color: var(--rust); }
+.hero-title-tv   {
+  color: var(--rust);
+  font-weight: 500;
+  font-size: 0.65em;
+  vertical-align: baseline;
+  letter-spacing: 0.04em;
 }
 
 .hero-sub {
   font-family: var(--serif);
-  font-size: clamp(1rem, 2vw, 1.2rem);
   font-style: italic;
-  color: var(--stone);
-  max-width: 460px;
-  line-height: 1.7;
-  margin-bottom: 0.75rem;
-}
-
-.hero-season {
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--amber);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--stone-mid);
+  line-height: 1.6;
   margin-bottom: 2.5rem;
 }
 
-.hero-buttons {
+.hero-actions {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* ── Strip (метаданные) ──────────────────────── */
 
-.hero-strip {
-  position: relative;
-  z-index: 2;
-  border-top: 1px solid var(--border2);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-  background: rgba(28,28,25,0.6);
-  backdrop-filter: blur(8px);
-}
-
-.strip-item {
-  padding: 1.1rem 1rem;
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-.strip-item:last-child { border-right: none; }
-
-.strip-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-
-.strip-val {
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--paper);
-}
-
-/* ── Buttons ─────────────────────────────────── */
+/* ═══ BUTTONS ════════════════════════════════════ */
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.6rem;
+  gap: 0.6rem;
   font-family: var(--sans);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.2s;
   cursor: pointer;
   border: none;
-  transition: all 0.2s;
-  text-decoration: none;
 }
 
-.btn-primary {
-  background: var(--amber);
-  color: var(--ink);
+/* Белый камень на стали */
+.btn-stone {
+  background: var(--stone);
+  color: var(--steel);
 }
-.btn-primary:hover {
-  background: var(--amber2);
-  transform: translateY(-1px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--paper);
-  border: 1px solid var(--border2);
-}
-.btn-outline:hover {
-  border-color: var(--amber);
-  color: var(--amber);
-  transform: translateY(-1px);
-}
-
-/* ── Section ─────────────────────────────────── */
-
-.section {
-  padding: 5rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-eyebrow {
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-  line-height: 1.15;
-}
-
-.section-sub {
-  font-family: var(--serif);
-  font-style: italic;
+.btn-stone:hover {
+  background: var(--rust);
   color: var(--stone);
-  margin-bottom: 2.5rem;
-  max-width: 520px;
-  font-size: 1.05rem;
+  transform: translateY(-1px);
 }
 
-/* ── Gabion divider ──────────────────────────── */
-
-.gabion-divider {
-  height: 32px;
-  background-image: var(--gabion);
-  background-color: rgba(200,195,181,0.04);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  margin: 0;
+/* Прозрачный с контуром */
+.btn-ghost {
+  background: transparent;
+  color: var(--stone);
+  border: 1px solid rgba(200,194,182,0.3);
+}
+.btn-ghost:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+  transform: translateY(-1px);
 }
 
-/* ── Cards ───────────────────────────────────── */
+/* Кнопка из камня — для светлых секций */
+.btn-steel {
+  background: var(--steel);
+  color: var(--stone);
+}
+.btn-steel:hover {
+  background: var(--rust);
+  transform: translateY(-1px);
+}
 
-.cards {
+
+/* ═══ HERO STRIP ═════════════════════════════════
+   Нижняя полоса — как металлические таблички на мемориале
+   ════════════════════════════════════════════════ */
+
+.hero-strip {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  border-top: 1px solid rgba(200,194,182,0.15);
+  background: rgba(26,25,22,0.85);
+  backdrop-filter: blur(10px);
 }
 
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-  transition: border-color 0.2s, transform 0.2s;
+.strip-item {
+  padding: 1.1rem 1.5rem;
+  border-right: 1px solid rgba(200,194,182,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
-.card:hover {
-  border-color: var(--amber);
-  transform: translateY(-2px);
+.strip-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone-mid);
 }
 
-.card-img {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: #181815;
-  background-image: var(--gabion);
+.strip-val {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+}
+
+.strip-live { color: var(--rust); }
+
+.strip-item-cta {
+  border-right: none;
+  padding: 0;
+}
+
+.strip-cta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--stone);
-  font-size: 2rem;
-}
-
-.card-body { padding: 1.25rem; }
-
-.card-tag {
+  height: 100%;
+  padding: 1.1rem 1.75rem;
+  font-family: var(--sans);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.4rem;
+  color: var(--stone-mid);
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
 }
 
-.card-title {
+.strip-cta:hover {
+  color: var(--rust);
+  background: rgba(181,128,46,0.06);
+}
+
+
+/* ═══ STONE BAR ══════════════════════════════════
+   Каменный разделитель — как разрез габионной стены
+   ════════════════════════════════════════════════ */
+
+.stone-bar {
+  display: block;
+  line-height: 0;
+  border: none;
+}
+
+
+/* ═══ ИСТОРИЯ ════════════════════════════════════ */
+
+.section-history {
+  background: var(--stone);
+  padding: 6rem 0;
+}
+
+.history-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Имитация каменной таблички — с бортиком и болтами */
+.plaque {
+  background: #e8e3d8;
+  border: 1px solid var(--stone-mid);
+  padding: 2rem;
+  position: relative;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 0 rgba(0,0,0,0.08),
+    0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Четыре болта по углам */
+.plaque::before {
+  content: '';
+  position: absolute;
+  top: 10px; left: 10px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--steel-light);
+  box-shadow:
+    calc(100% + 4px + 2rem * 2 + 14px - 26px) 0 0 0 var(--steel-light),
+    0 calc(100% + 4px + 2rem * 2 + var(--plaque-h, 180px) - 26px) 0 0 var(--steel-light),
+    calc(100% + 4px + 2rem * 2 + 14px - 26px) calc(100% + 4px + 2rem * 2 + var(--plaque-h, 180px) - 26px) 0 0 var(--steel-light);
+}
+
+.plaque-icons {
+  color: var(--steel-light);
+  margin-bottom: 1.25rem;
+  opacity: 0.7;
+}
+
+.plaque-text {
   font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-  line-height: 1.3;
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
 }
 
-.card-text {
-  font-size: 0.88rem;
+.plaque-films {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.plaque-film-label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.plaque-films em {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  color: var(--steel);
+  font-style: italic;
+}
+
+.plaque-source {
+  margin-top: 1rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Текстовая часть */
+.section-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1rem;
+}
+
+.section-heading {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  color: var(--steel);
+  margin-bottom: 1.5rem;
+}
+
+.section-heading-light {
   color: var(--stone);
+}
+
+.section-body {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+}
+
+.link-arrow {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rust);
+  transition: opacity 0.2s;
+}
+.link-arrow:hover { opacity: 0.7; }
+.link-arrow--light { color: var(--stone-mid); }
+.link-arrow--light:hover { color: var(--stone); }
+
+
+/* ═══ PHOTOWALL ══════════════════════════════════
+   Стена с архивными фотографиями — как в мемориале
+   Тёмный фон, фото в чёрных рамках
+   ════════════════════════════════════════════════ */
+
+.section-photowall {
+  background: var(--steel-mid);
+  padding: 5rem 0 0;
+  overflow: hidden;
+}
+
+.photowall-header {
+  margin-bottom: 2.5rem;
+}
+
+.photowall-header .section-label {
+  color: var(--stone-mid);
+}
+
+/* Masonry grid — как настоящая стена с фотографиями разных размеров */
+.photowall-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 140px);
+  gap: 6px;
+  padding: 0 2rem;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* Размещение кадров — как на реальной стене (асимметрично) */
+.photo-frame--lg { grid-column: span 2; grid-row: span 2; }
+.photo-frame--md { grid-column: span 2; grid-row: span 1; }
+.photo-frame--sm { grid-column: span 1; grid-row: span 1; }
+
+.photo-frame:nth-child(1)  { grid-column: 1; grid-row: 1; grid-column-end: span 2; grid-row-end: span 2; }
+.photo-frame:nth-child(2)  { grid-column: 3; grid-row: 1; }
+.photo-frame:nth-child(3)  { grid-column: 4; grid-row: 1; grid-column-end: span 2; }
+.photo-frame:nth-child(4)  { grid-column: 6; grid-row: 1; }
+.photo-frame:nth-child(5)  { grid-column: 3; grid-row: 2; grid-column-end: span 2; }
+.photo-frame:nth-child(6)  { grid-column: 5; grid-row: 2; grid-column-end: span 2; grid-row-end: span 2; }
+.photo-frame:nth-child(7)  { grid-column: 1; grid-row: 3; }
+.photo-frame:nth-child(8)  { grid-column: 2; grid-row: 3; grid-column-end: span 2; }
+.photo-frame:nth-child(9)  { grid-column: 4; grid-row: 3; }
+.photo-frame:nth-child(10) { grid-column: 3; grid-row: 3; }
+.photo-frame:nth-child(11) { grid-column: 5; grid-row: 3; }
+.photo-frame:nth-child(12) { grid-column: 6; grid-row: 3; }
+
+/* Чёрная рамка + матовый бevel-эффект */
+.photo-frame {
+  background: var(--steel);
+  border: 2px solid #111;
+  padding: 6px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 1px 3px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.photo-frame:hover {
+  transform: scale(1.03) rotate(-0.5deg);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 6px 20px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.photo-inner {
+  width: 100%;
+  height: 100%;
+  background-color: #3a3730;
+  /* Имитация ч/б фотографии через CSS-градиенты */
+  background-image:
+    radial-gradient(ellipse 60% 80% at 50% 30%, rgba(200,195,185,0.15) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(50,45,40,0.3) 0%, rgba(30,28,24,0.1) 100%);
+  filter: saturate(0.1) contrast(1.1);
+}
+
+/* Разные тональные «карточки» для каждого фото */
+.photo-inner--1  { background-color: #3e3a34; }
+.photo-inner--2  { background-color: #2e2c28; }
+.photo-inner--3  { background-color: #44403a; }
+.photo-inner--4  { background-color: #323028; }
+.photo-inner--5  { background-color: #3a3632; }
+.photo-inner--6  { background-color: #282624; }
+.photo-inner--7  { background-color: #403c36; }
+.photo-inner--8  { background-color: #363230; }
+.photo-inner--9  { background-color: #2c2a26; }
+.photo-inner--10 { background-color: #3c3830; }
+.photo-inner--11 { background-color: #302e2a; }
+.photo-inner--12 { background-color: #38342e; }
+
+.photowall-caption {
+  padding: 2rem 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.photowall-caption p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--stone-mid);
+  max-width: 500px;
   line-height: 1.6;
 }
 
-/* ── Page hero (inner pages) ─────────────────── */
 
-.page-hero {
-  padding: 4rem 2rem 3rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  border-bottom: 1px solid var(--border);
-  position: relative;
+/* ═══ NAV CARDS ══════════════════════════════════
+   Навигация по разделам — как металлические таблички
+   ════════════════════════════════════════════════ */
+
+.section-nav-cards {
+  background: var(--stone-warm);
+  padding: 5rem 0;
 }
 
-.page-hero::before {
+.nav-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--stone-mid);
+  border: 1px solid var(--stone-mid);
+}
+
+.nav-card {
+  background: var(--stone);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--rust);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.nav-card:hover { background: var(--stone-warm); }
+.nav-card:hover::before { transform: scaleX(1); }
+
+.nav-card--accent {
+  background: var(--steel);
+}
+
+.nav-card--accent .nav-card-num,
+.nav-card--accent .nav-card-title,
+.nav-card--accent .nav-card-text,
+.nav-card--accent .nav-card-arrow,
+.nav-card--accent .nav-card-icon { color: var(--stone) !important; }
+
+.nav-card--accent:hover { background: var(--rust); }
+
+.nav-card-num {
+  font-family: var(--display);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: var(--text-faint);
+  font-weight: 400;
+}
+
+.nav-card-icon {
+  color: var(--steel-light);
+  line-height: 0;
+}
+
+.nav-card-title {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--steel);
+  line-height: 1.2;
+}
+
+.nav-card-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.nav-card-arrow {
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--rust);
+  margin-top: 0.5rem;
+}
+
+
+/* ═══ МЕМОРИАЛ ════════════════════════════════════ */
+
+.section-memorial {
+  background: var(--steel);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(200,194,182,0.1);
+}
+
+.memorial-block {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.memorial-years {
+  font-family: var(--display);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--stone-mid);
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(200,194,182,0.15);
+  padding-right: 3rem;
+}
+
+.memorial-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--stone-mid);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+
+/* ═══ FOOTER ══════════════════════════════════════ */
+
+.footer {
+  background: var(--steel-mid);
+  border-top: 1px solid rgba(200,194,182,0.12);
+  padding: 3rem 0 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(200,194,182,0.08);
+}
+
+.footer-logo {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--stone);
+  margin-bottom: 0.75rem;
+}
+
+.footer-logo-dot { color: var(--rust); }
+.footer-logo-tv  { color: var(--rust); font-style: italic; }
+
+.footer-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--stone-mid);
+  line-height: 1.6;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.footer-nav a {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone-mid);
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover { color: var(--rust); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(200,194,182,0.3);
+}
+
+
+/* ═══ INNER PAGE SHELL ════════════════════════════
+   Оболочка для внутренних страниц
+   ════════════════════════════════════════════════ */
+
+.page { padding-top: var(--nav-h); }
+
+/* Шапка внутренней страницы */
+.page-head {
+  background: var(--steel);
+  padding: 4rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-head::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: var(--gabion);
-  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='120'%3E%3Cellipse cx='22' cy='20' rx='18' ry='14' fill='rgba(255,255,255,0.03)'/%3E%3Cellipse cx='100' cy='22' rx='20' ry='15' fill='rgba(255,255,255,0.025)'/%3E%3Cellipse cx='148' cy='18' rx='16' ry='13' fill='rgba(255,255,255,0.02)'/%3E%3Cellipse cx='60' cy='50' rx='18' ry='14' fill='rgba(255,255,255,0.03)'/%3E%3Cellipse cx='125' cy='45' rx='21' ry='15' fill='rgba(255,255,255,0.025)'/%3E%3C/svg%3E");
   pointer-events: none;
 }
 
-.page-hero > * { position: relative; z-index: 1; }
+.page-head-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+}
 
-.page-hero .badge {
+.page-badge {
   display: inline-block;
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--amber);
-  border: 1px solid rgba(196,134,58,0.3);
-  padding: 0.25rem 0.75rem;
-  border-radius: 2px;
+  color: var(--rust);
+  border: 1px solid rgba(181,128,46,0.3);
+  padding: 0.2rem 0.65rem;
   margin-bottom: 1.25rem;
 }
 
-.page-hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+.page-head h1 {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 700;
-  margin-bottom: 0.75rem;
-  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+  color: var(--stone);
+  margin-bottom: 1rem;
 }
 
-.page-hero p {
+.page-head p {
   font-family: var(--serif);
   font-style: italic;
-  color: var(--stone);
+  color: var(--stone-mid);
   font-size: 1.05rem;
   max-width: 540px;
   line-height: 1.65;
 }
 
-/* ── Film page ───────────────────────────────── */
+/* Основной контент страницы */
+.page-content {
+  background: var(--stone);
+  padding: 4rem 2rem;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+
+/* ═══ CARD GRID ══════════════════════════════════ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--stone-mid);
+  border: 1px solid var(--stone-mid);
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--stone);
+  transition: background 0.2s;
+  overflow: hidden;
+}
+
+.card:hover { background: var(--stone-warm); }
+
+.card-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--steel-mid);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='120'%3E%3Cellipse cx='22' cy='20' rx='18' ry='14' fill='rgba(255,255,255,0.04)'/%3E%3Cellipse cx='100' cy='22' rx='20' ry='15' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-play {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(181,128,46,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.card:hover .card-play {
+  transform: scale(1.1);
+  background: var(--rust);
+}
+
+.card-body { padding: 1.25rem 1.5rem; }
+
+.card-tag {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.4rem;
+}
+
+.card-title {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--steel);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.card-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+
+/* ═══ LIST (news/projects) ════════════════════════ */
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--stone-mid);
+  border: 1px solid var(--stone-mid);
+  margin-top: 2rem;
+}
+
+.item-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--stone);
+  transition: background 0.15s;
+}
+
+.item-row:hover { background: var(--stone-warm); }
+
+.item-n {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--stone-mid);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.item-title {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--steel);
+  margin-bottom: 0.2rem;
+}
+
+.item-meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.item-tag {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rust);
+  border: 1px solid rgba(181,128,46,0.35);
+  padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+}
+
+
+/* ═══ CONTACTS ════════════════════════════════════ */
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--stone-mid);
+  border: 1px solid var(--stone-mid);
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 3rem 8rem 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--stone);
+  transition: background 0.15s;
+}
+
+.contact-row:hover { background: var(--stone-warm); }
+
+.contact-icon {
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.contact-label {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-value {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--rust);
+  transition: opacity 0.2s;
+}
+
+.contact-value:hover { opacity: 0.75; }
+
+/* Блок «стать участником» */
+.participate-block {
+  margin-top: 2.5rem;
+  background: var(--steel);
+  padding: 2rem;
+  max-width: 600px;
+  border-left: 3px solid var(--rust);
+}
+
+.participate-block h2 {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+  margin-bottom: 0.75rem;
+}
+
+.participate-block p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--stone-mid);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+
+/* ═══ PERSON CARDS ════════════════════════════════ */
+
+.person-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--stone-mid);
+  border: 1px solid var(--stone-mid);
+  margin-top: 2rem;
+}
+
+.person-card {
+  background: var(--stone);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.person-card:hover { background: var(--stone-warm); }
+
+.person-avatar {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--steel-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: var(--stone-mid);
+  border: 1px solid var(--stone-mid);
+}
+
+.person-role {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 0.3rem;
+}
+
+.person-name {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--steel);
+  margin-bottom: 0.5rem;
+}
+
+.person-text {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+
+/* ═══ FILM PAGE ═══════════════════════════════════ */
 
 .film-poster {
   width: 100%;
-  max-width: 680px;
+  max-width: 700px;
   aspect-ratio: 16/9;
-  background: #111110;
-  background-image: var(--gabion);
-  border: 1px solid var(--border2);
-  border-radius: 4px;
+  background: var(--steel-mid);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='120'%3E%3Cellipse cx='22' cy='20' rx='18' ry='14' fill='rgba(255,255,255,0.04)'/%3E%3Cellipse cx='100' cy='60' rx='20' ry='15' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E");
+  border: 1px solid rgba(200,194,182,0.12);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto 2.5rem;
   gap: 0.5rem;
-  position: relative;
-  overflow: hidden;
 }
 
-.film-poster-label {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--amber);
+.film-poster-title {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rust);
 }
 
 .film-poster-sub {
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
 }
 
 .film-meta {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  background: var(--stone-mid);
+  border: 1px solid var(--stone-mid);
   margin-bottom: 2.5rem;
 }
 
 .film-meta-item {
+  background: var(--stone);
   padding: 1rem 1.25rem;
-  background: var(--card-bg);
 }
 
 .film-meta-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--text-muted);
   margin-bottom: 0.3rem;
 }
 
 .film-meta-val {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--steel);
 }
+
+.film-meta-val--live { color: var(--rust); }
 
 .film-desc {
   font-family: var(--serif);
+  font-style: italic;
   font-size: 1.05rem;
-  color: var(--stone);
+  color: var(--text-body);
   line-height: 1.8;
-  max-width: 680px;
-  font-style: italic;
-}
-
-/* ── Heroes ──────────────────────────────────── */
-
-.hero-person-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.hero-person-card:hover {
-  border-color: var(--amber);
-  transform: translateY(-2px);
-}
-
-.person-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: #2a2a26;
-  background-image: var(--gabion);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem;
-  font-size: 1.75rem;
-  border: 1px solid var(--border2);
-}
-
-.person-name {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-}
-
-.person-role {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.6rem;
-}
-
-.person-text {
-  font-size: 0.88rem;
-  color: var(--stone);
-  line-height: 1.6;
-}
-
-/* ── Contacts ────────────────────────────────── */
-
-.contact-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 2rem;
-  max-width: 560px;
-}
-
-.contact-list li {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.1rem 1.5rem;
-  background: var(--card-bg);
-  transition: background 0.15s;
-}
-
-.contact-list li:hover { background: rgba(196,134,58,0.06); }
-
-.contact-list .ci {
-  font-size: 1.25rem;
-  width: 1.75rem;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.contact-list .cl {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--stone);
-  flex: 1;
-}
-
-.contact-list a {
-  color: var(--amber);
-  font-family: var(--serif);
-  font-size: 1rem;
-  transition: opacity 0.2s;
-}
-.contact-list a:hover { opacity: 0.75; }
-
-/* ── News / Projects ─────────────────────────── */
-
-.article-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.article-item {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 1.5rem;
-  align-items: center;
-  padding: 1.25rem 1.5rem;
-  background: var(--card-bg);
-  transition: background 0.15s;
-}
-
-.article-item:hover { background: rgba(196,134,58,0.04); }
-
-.article-num {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  color: var(--border2);
-  font-style: italic;
-  width: 2rem;
-  text-align: center;
-}
-
-.article-title {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  line-height: 1.3;
-}
-
-.article-meta {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  color: var(--stone);
-  text-transform: uppercase;
-}
-
-.article-tag {
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--amber);
-  border: 1px solid rgba(196,134,58,0.3);
-  padding: 0.2rem 0.6rem;
-  border-radius: 2px;
-  white-space: nowrap;
-}
-
-/* ── TV page ─────────────────────────────────── */
-
-.tv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.25rem;
-}
-
-.tv-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.tv-card:hover {
-  border-color: var(--amber);
-  transform: translateY(-2px);
-}
-
-.tv-thumb {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: #111110;
-  background-image: var(--gabion);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  cursor: pointer;
-}
-
-.tv-play {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(196,134,58,0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s, background 0.2s;
-}
-.tv-card:hover .tv-play {
-  transform: scale(1.1);
-  background: var(--amber);
-}
-
-.tv-play svg { fill: var(--ink); }
-
-.tv-body { padding: 1.1rem 1.25rem; }
-
-.tv-ep {
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.35rem;
-}
-
-.tv-title {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-  line-height: 1.3;
-}
-
-.tv-desc {
-  font-size: 0.85rem;
-  color: var(--stone);
-}
-
-/* ── Footer ──────────────────────────────────── */
-
-footer {
-  border-top: 1px solid var(--border2);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  background: var(--ink);
-  gap: 1rem;
-}
-
-.footer-logo {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--paper);
-}
-
-.footer-logo em { color: var(--amber); font-style: italic; }
-
-.footer-center {
-  text-align: center;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-
-.footer-right {
-  text-align: right;
-  font-size: 0.75rem;
-  color: var(--stone);
-}
-
-.footer-nav {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  list-style: none;
-}
-
-.footer-nav a {
-  font-size: 0.72rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--stone);
-  transition: color 0.2s;
-}
-.footer-nav a:hover { color: var(--amber); }
-
-/* ── About strip ─────────────────────────────── */
-
-.about-strip {
-  background: rgba(61,92,64,0.12);
-  border: 1px solid rgba(61,92,64,0.25);
-  border-left: 3px solid var(--fir);
-  padding: 1.5rem 2rem;
   max-width: 700px;
-  margin: 3rem auto 0;
-  border-radius: 0 4px 4px 0;
 }
 
-.about-strip p {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--stone);
-  line-height: 1.7;
-}
 
-.about-strip .about-source {
-  display: block;
-  margin-top: 0.5rem;
+/* ═══ FOOTER for inner pages ══════════════════════ */
+
+.footer-simple {
+  background: var(--steel-mid);
+  border-top: 1px solid rgba(200,194,182,0.1);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--sans);
   font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--fir);
-  font-style: normal;
+  color: rgba(200,194,182,0.3);
 }
 
-/* ── Mobile ──────────────────────────────────── */
+.footer-simple-logo {
+  font-family: var(--display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--stone-mid);
+  letter-spacing: 0.06em;
+}
 
-@media (max-width: 768px) {
-  nav { padding: 0 1rem; }
+.footer-simple-logo em { color: var(--rust); font-style: italic; }
 
+
+/* ═══ RESPONSIVE ══════════════════════════════════ */
+
+@media (max-width: 900px) {
   .nav-links {
     position: fixed;
     top: var(--nav-h);
     left: 0; right: 0;
-    background: rgba(28,28,25,0.98);
-    border-bottom: 1px solid var(--border2);
+    background: var(--steel);
+    border-bottom: 1px solid rgba(200,194,182,0.1);
     flex-direction: column;
     padding: 0.5rem;
     transform: translateY(-120%);
@@ -866,33 +1277,41 @@ footer {
     z-index: 99;
   }
   .nav-links.open { transform: translateY(0); }
-  .nav-links a { padding: 0.65rem 1rem; font-size: 0.9rem; }
+  .nav-links a { padding: 0.7rem 1rem; font-size: 0.85rem; }
   .nav-burger { display: flex; }
 
-  .hero-main { padding: 3rem 1.25rem 2rem; }
-  .hero-buttons { flex-direction: column; align-items: stretch; }
-  .hero-buttons .btn { justify-content: center; }
+  .hero-strip { grid-template-columns: 1fr 1fr; }
+  .strip-item-cta { grid-column: 1 / -1; border-top: 1px solid rgba(200,194,182,0.1); }
+
+  .history-layout { grid-template-columns: 1fr; gap: 3rem; }
+
+  .nav-cards-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .photowall-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 120px);
+  }
+  .photo-frame:nth-child(n) {
+    grid-column: auto; grid-row: auto;
+    grid-column-end: auto; grid-row-end: auto;
+  }
+
+  .memorial-block { flex-direction: column; gap: 1.5rem; }
+  .memorial-years { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(200,194,182,0.15); padding-bottom: 1.5rem; }
+
+  .footer-inner { flex-direction: column; gap: 2rem; }
+  .footer-nav ul { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 0.75rem; }
+  .footer-bottom { flex-direction: column; gap: 0.25rem; text-align: center; }
+}
+
+@media (max-width: 600px) {
   .hero-strip { grid-template-columns: 1fr; }
-  .strip-item { border-right: none; border-bottom: 1px solid var(--border); }
-  .strip-item:last-child { border-bottom: none; }
-
-  .section { padding: 3rem 1.25rem; }
-  .page-hero { padding: 2.5rem 1.25rem 2rem; }
-
-  .cards { grid-template-columns: 1fr; }
-  .tv-grid { grid-template-columns: 1fr; }
-
-  .article-item {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .article-num { display: none; }
-
-  footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 0.75rem;
-  }
-  .footer-nav { justify-content: center; }
-  .footer-right { text-align: center; }
+  .strip-item { border-right: none; border-bottom: 1px solid rgba(200,194,182,0.1); }
+  .nav-cards-grid { grid-template-columns: 1fr; }
+  .nav { padding: 0 1rem; }
+  .item-row { grid-template-columns: 1fr auto; }
+  .item-n { display: none; }
+  .contact-row { grid-template-columns: 2rem 1fr; }
+  .contact-label { display: none; }
+  .footer-simple { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
