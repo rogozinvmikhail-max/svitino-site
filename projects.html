@@ -10,8 +10,8 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">SVITINO<span>.TV</span></a>
-  <button class="nav-burger" aria-label="Меню">
+  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
@@ -27,8 +27,8 @@
 
 <div class="page">
   <div class="page-hero">
-    <div class="coming-soon">Инициативы</div>
-    <h1>Проекты <span style="color:var(--accent)">Свитино</span></h1>
+    <div class="badge">Инициативы</div>
+    <h1>Проекты Свитино</h1>
     <p>Всё, что рождается, строится и живёт в рамках платформы.</p>
   </div>
 
@@ -37,29 +37,33 @@
 
     <div class="cards">
       <div class="card">
-        <div class="card-img">🎬</div>
+        <div class="card-img">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
+        </div>
         <div class="card-body">
           <div class="card-tag">Документальный фильм</div>
           <div class="card-title">Скоро</div>
           <div class="card-text">Документальный проект медиа-платформы Свитино ТВ.</div>
           <br>
-          <a href="film.html" class="btn btn-outline" style="font-size:0.85rem; padding:0.5rem 1rem;">Подробнее</a>
+          <a href="film.html" class="btn btn-outline" style="font-size:0.78rem;padding:0.5rem 1.2rem">Подробнее</a>
         </div>
       </div>
-
       <div class="card">
-        <div class="card-img">📺</div>
+        <div class="card-img">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 2l-4 5-4-5"/></svg>
+        </div>
         <div class="card-body">
           <div class="card-tag">Медиа</div>
           <div class="card-title">Свитино ТВ · Сезон 1</div>
           <div class="card-text">Первый сезон видео-проекта о жизни и людях Свитино.</div>
           <br>
-          <a href="tv.html" class="btn btn-outline" style="font-size:0.85rem; padding:0.5rem 1rem;">Смотреть</a>
+          <a href="tv.html" class="btn btn-outline" style="font-size:0.78rem;padding:0.5rem 1.2rem">Смотреть</a>
         </div>
       </div>
-
       <div class="card">
-        <div class="card-img">✦</div>
+        <div class="card-img">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
         <div class="card-body">
           <div class="card-tag">Скоро</div>
           <div class="card-title">Следующий проект</div>
@@ -71,7 +75,16 @@
 </div>
 
 <footer>
-  <strong>SVITINO.TV</strong> — живая медиа-платформа &nbsp;·&nbsp; 2025
+  <div class="footer-logo">SVITINO<em>.TV</em></div>
+  <div class="footer-center">Деревня Свитино · 2025</div>
+  <nav aria-label="Footer navigation">
+    <ul class="footer-nav">
+      <li><a href="tv.html">ТВ</a></li>
+      <li><a href="heroes.html">Герои</a></li>
+      <li><a href="news.html">Новости</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
 </footer>
 
 <script src="js/nav.js"></script>

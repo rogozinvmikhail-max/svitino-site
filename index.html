@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SVITINO.TV — Живая медиа-платформа</title>
-  <meta name="description" content="Живая медиа-платформа о людях, проектах, историях и жизни Свитино.">
+  <meta name="description" content="Живая медиа-платформа о людях, проектах, историях и жизни деревни Свитино.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">SVITINO<span>.TV</span></a>
-  <button class="nav-burger" aria-label="Меню">
+  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
@@ -25,22 +25,133 @@
   </ul>
 </nav>
 
-<div class="page">
+<main>
   <section class="hero">
-    <p class="hero-eyebrow">Медиа-платформа</p>
-    <h1>SVITINO<span class="dot">.</span>TV</h1>
-    <p class="hero-sub">Живая медиа-платформа о людях, проектах, историях и жизни Свитино.</p>
-    <p class="hero-note">Первый сезон проекта уже начался.</p>
-    <div class="hero-buttons">
-      <a href="tv.html" class="btn btn-primary">▶ Свитино ТВ</a>
-      <a href="heroes.html" class="btn btn-outline">Герои проекта</a>
-      <a href="contacts.html" class="btn btn-outline">Стать участником</a>
+    <!-- Decorative archive photo wall -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+    </div>
+
+    <div class="hero-main">
+      <div class="hero-eyebrow">Деревня Свитино &nbsp;·&nbsp; Наро-Фоминский район</div>
+
+      <h1>SVITINO<span class="dot">.</span><span class="tv">TV</span></h1>
+      <div class="hero-rule"></div>
+
+      <p class="hero-sub">Живая медиа-платформа о людях, проектах, историях и жизни Свитино.</p>
+      <p class="hero-season">Первый сезон уже начался</p>
+
+      <div class="hero-buttons">
+        <a href="tv.html" class="btn btn-primary">
+          <svg width="12" height="12" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          Свитино ТВ
+        </a>
+        <a href="heroes.html" class="btn btn-outline">Герои проекта</a>
+        <a href="contacts.html" class="btn btn-outline">Стать участником</a>
+      </div>
+    </div>
+
+    <div class="hero-strip">
+      <div class="strip-item">
+        <span class="strip-label">Сезон</span>
+        <span class="strip-val">Первый</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-label">Формат</span>
+        <span class="strip-val">Документальный</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-label">Статус</span>
+        <span class="strip-val" style="color:var(--amber)">В эфире</span>
+      </div>
     </div>
   </section>
-</div>
+
+  <div class="gabion-divider"></div>
+
+  <!-- About -->
+  <div class="section" style="padding-bottom:3rem">
+    <p class="section-eyebrow">О проекте</p>
+    <h2 class="section-title">Кино в деревне началось<br>ещё в 1945 году</h2>
+    <div class="about-strip">
+      <p>После окончания Великой Отечественной войны между двумя дубами устанавливали экран, и жители приходили со стульчиками — смотреть «Броненосца Потёмкина», «Чапаева», «Путёвку в жизнь». Это было первое знакомство с кинематографом того времени.</p>
+      <span class="about-source">Мемориальная табличка · Деревня Свитино</span>
+    </div>
+  </div>
+
+  <div class="gabion-divider"></div>
+
+  <!-- Projects preview -->
+  <div class="section">
+    <p class="section-eyebrow">Разделы</p>
+    <h2 class="section-title">Что есть на платформе</h2>
+    <p class="section-sub">Видео, истории жителей, документальный фильм и новости деревни.</p>
+    <div class="cards">
+      <a href="tv.html" class="card" style="text-decoration:none">
+        <div class="card-img">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 2l-4 5-4-5"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Сезон 1</div>
+          <div class="card-title">Свитино ТВ</div>
+          <div class="card-text">Видео, репортажи и эфиры о жизни и людях деревни.</div>
+        </div>
+      </a>
+      <a href="heroes.html" class="card" style="text-decoration:none">
+        <div class="card-img">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Люди проекта</div>
+          <div class="card-title">Герои</div>
+          <div class="card-text">Жители и участники, чьи истории составляют основу проекта.</div>
+        </div>
+      </a>
+      <a href="film.html" class="card" style="text-decoration:none">
+        <div class="card-img">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">В производстве</div>
+          <div class="card-title">Документальный фильм</div>
+          <div class="card-text">Фильм о Свитино — скоро.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
 
 <footer>
-  <strong>SVITINO.TV</strong> — живая медиа-платформа &nbsp;·&nbsp; 2025
+  <div class="footer-logo">SVITINO<em>.TV</em></div>
+  <div class="footer-center">Деревня Свитино · 2025</div>
+  <nav aria-label="Footer navigation">
+    <ul class="footer-nav">
+      <li><a href="tv.html">ТВ</a></li>
+      <li><a href="heroes.html">Герои</a></li>
+      <li><a href="news.html">Новости</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
 </footer>
 
 <script src="js/nav.js"></script>
