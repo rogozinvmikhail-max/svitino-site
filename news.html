@@ -4,16 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Новости — SVITINO.TV</title>
-  <meta name="description" content="Новости и обновления медиа-платформы Свитино ТВ.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
-  <button class="nav-burger" aria-label="Меню" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-logo-main">SVITINO</span><span class="nav-logo-dot">.</span><span class="nav-logo-tv">TV</span></a>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -24,49 +20,30 @@
     <li><a href="contacts.html">Контакты</a></li>
   </ul>
 </nav>
-
 <div class="page">
-  <div class="page-hero">
-    <div class="badge">Обновления</div>
-    <h1>Новости проекта</h1>
-    <p>Всё, что происходит в проекте — здесь и в реальном времени.</p>
+  <div class="page-head">
+    <div class="page-head-inner">
+      <div class="page-badge">Обновления</div>
+      <h1>Новости проекта</h1>
+      <p>Всё, что происходит в проекте — здесь и в реальном времени.</p>
+    </div>
   </div>
-
-  <div class="section">
-    <div class="article-list">
-      <div class="article-item">
-        <div class="article-num">01</div>
-        <div>
-          <div class="article-title">Первый сезон Свитино ТВ начался</div>
-          <div class="article-meta">Июнь 2025 &nbsp;·&nbsp; Запуск</div>
-        </div>
-        <div class="article-tag">Запуск</div>
+  <div class="page-content">
+    <div class="item-list">
+      <div class="item-row">
+        <div class="item-n">01</div>
+        <div><div class="item-title">Первый сезон Свитино ТВ начался</div><div class="item-meta">Июнь 2025 · Запуск</div></div>
+        <div class="item-tag">Запуск</div>
       </div>
-      <div class="article-item">
-        <div class="article-num">—</div>
-        <div>
-          <div class="article-title">Следующая новость появится здесь</div>
-          <div class="article-meta">Скоро &nbsp;·&nbsp; Анонс</div>
-        </div>
-        <div class="article-tag">Скоро</div>
+      <div class="item-row">
+        <div class="item-n">—</div>
+        <div><div class="item-title">Следующая новость появится здесь</div><div class="item-meta">Скоро · Анонс</div></div>
+        <div class="item-tag">Скоро</div>
       </div>
     </div>
   </div>
 </div>
-
-<footer>
-  <div class="footer-logo">SVITINO<em>.TV</em></div>
-  <div class="footer-center">Деревня Свитино · 2025</div>
-  <nav aria-label="Footer navigation">
-    <ul class="footer-nav">
-      <li><a href="tv.html">ТВ</a></li>
-      <li><a href="heroes.html">Герои</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-</footer>
-
+<footer class="footer-simple"><span class="footer-simple-logo">SVITINO<em>.TV</em></span><span>Деревня Свитино · 2025</span></footer>
 <script src="js/nav.js"></script>
 </body>
 </html>

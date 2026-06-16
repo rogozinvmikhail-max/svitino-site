@@ -4,16 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Свитино ТВ — SVITINO.TV</title>
-  <meta name="description" content="Видео и эфиры медиа-платформы Свитино ТВ.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
-  <button class="nav-burger" aria-label="Меню" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-logo-main">SVITINO</span><span class="nav-logo-dot">.</span><span class="nav-logo-tv">TV</span></a>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -24,71 +20,34 @@
     <li><a href="contacts.html">Контакты</a></li>
   </ul>
 </nav>
-
 <div class="page">
-  <div class="page-hero">
-    <div class="badge">Сезон 1 · В эфире</div>
-    <h1>Свитино ТВ</h1>
-    <p>Видео, репортажи и эфиры о жизни и людях Свитино.</p>
+  <div class="page-head">
+    <div class="page-head-inner">
+      <div class="page-badge">Сезон 1 · В эфире</div>
+      <h1>Свитино ТВ</h1>
+      <p>Видео, репортажи и эфиры о жизни и людях деревни Свитино.</p>
+    </div>
   </div>
-
-  <div class="section">
-    <p class="section-sub">Здесь появятся выпуски первого сезона. Следите за обновлениями.</p>
-
-    <div class="tv-grid">
-      <div class="tv-card">
-        <div class="tv-thumb">
-          <div class="tv-play">
-            <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-          </div>
-        </div>
-        <div class="tv-body">
-          <div class="tv-ep">Сезон 1 · Выпуск 1</div>
-          <div class="tv-title">Скоро</div>
-          <div class="tv-desc">Первый выпуск проекта Свитино ТВ.</div>
-        </div>
+  <div class="page-content">
+    <div class="section-label">Сезон первый</div>
+    <p style="font-family:var(--serif);font-style:italic;color:var(--text-muted);margin-bottom:0.5rem">Здесь появятся выпуски первого сезона. Следите за обновлениями.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-thumb"><div class="card-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div></div>
+        <div class="card-body"><div class="card-tag">Сезон 1 · Выпуск 1</div><div class="card-title">Скоро</div><div class="card-text">Первый выпуск проекта Свитино ТВ.</div></div>
       </div>
-      <div class="tv-card">
-        <div class="tv-thumb">
-          <div class="tv-play">
-            <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-          </div>
-        </div>
-        <div class="tv-body">
-          <div class="tv-ep">Сезон 1 · Выпуск 2</div>
-          <div class="tv-title">Скоро</div>
-          <div class="tv-desc">Следующий выпуск в разработке.</div>
-        </div>
+      <div class="card">
+        <div class="card-thumb"><div class="card-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div></div>
+        <div class="card-body"><div class="card-tag">Сезон 1 · Выпуск 2</div><div class="card-title">Скоро</div><div class="card-text">Следующий выпуск в разработке.</div></div>
       </div>
-      <div class="tv-card">
-        <div class="tv-thumb">
-          <div class="tv-play">
-            <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="currentColor"/></svg>
-          </div>
-        </div>
-        <div class="tv-body">
-          <div class="tv-ep">Сезон 1 · Выпуск 3</div>
-          <div class="tv-title">Скоро</div>
-          <div class="tv-desc">Следующий выпуск в разработке.</div>
-        </div>
+      <div class="card">
+        <div class="card-thumb"><div class="card-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="6,4 20,12 6,20"/></svg></div></div>
+        <div class="card-body"><div class="card-tag">Сезон 1 · Выпуск 3</div><div class="card-title">Скоро</div><div class="card-text">Следующий выпуск в разработке.</div></div>
       </div>
     </div>
   </div>
 </div>
-
-<footer>
-  <div class="footer-logo">SVITINO<em>.TV</em></div>
-  <div class="footer-center">Деревня Свитино · 2025</div>
-  <nav aria-label="Footer navigation">
-    <ul class="footer-nav">
-      <li><a href="tv.html">ТВ</a></li>
-      <li><a href="heroes.html">Герои</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-</footer>
-
+<footer class="footer-simple"><span class="footer-simple-logo">SVITINO<em>.TV</em></span><span>Деревня Свитино · 2025</span></footer>
 <script src="js/nav.js"></script>
 </body>
 </html>

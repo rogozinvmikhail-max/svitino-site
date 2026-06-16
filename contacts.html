@@ -4,40 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — SVITINO.TV</title>
-  <meta name="description" content="Связаться с командой Свитино ТВ или стать участником проекта.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .participate {
-      background: rgba(61,92,64,0.1);
-      border: 1px solid rgba(61,92,64,0.25);
-      border-left: 3px solid var(--fir);
-      border-radius: 0 4px 4px 0;
-      padding: 2rem 2rem 2rem 1.75rem;
-      margin-top: 2.5rem;
-      max-width: 560px;
-    }
-    .participate h2 {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-    }
-    .participate p {
-      font-family: var(--serif);
-      font-style: italic;
-      color: var(--stone);
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-  </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
-  <button class="nav-burger" aria-label="Меню" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-logo-main">SVITINO</span><span class="nav-logo-dot">.</span><span class="nav-logo-tv">TV</span></a>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -48,54 +20,40 @@
     <li><a href="contacts.html">Контакты</a></li>
   </ul>
 </nav>
-
 <div class="page">
-  <div class="page-hero">
-    <div class="badge">Связь</div>
-    <h1>Контакты и участие</h1>
-    <p>Напишите нам или станьте героем следующего выпуска.</p>
+  <div class="page-head">
+    <div class="page-head-inner">
+      <div class="page-badge">Связь</div>
+      <h1>Контакты</h1>
+      <p>Напишите нам или станьте героем следующего выпуска.</p>
+    </div>
   </div>
-
-  <div class="section">
-    <ul class="contact-list">
-      <li>
-        <span class="ci">✉</span>
-        <span class="cl">Email</span>
-        <a href="mailto:info@svitino.tv">info@svitino.tv</a>
-      </li>
-      <li>
-        <span class="ci">✈</span>
-        <span class="cl">Telegram</span>
-        <a href="https://t.me/svitinotv" target="_blank" rel="noopener">@svitinotv</a>
-      </li>
-      <li>
-        <span class="ci">◎</span>
-        <span class="cl">Сайт</span>
-        <a href="https://svitino.tv">svitino.tv</a>
-      </li>
-    </ul>
-
-    <div class="participate">
+  <div class="page-content">
+    <div class="contact-items">
+      <div class="contact-row">
+        <span class="contact-icon">✉</span>
+        <span class="contact-label">Email</span>
+        <a href="mailto:info@svitino.tv" class="contact-value">info@svitino.tv</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">✈</span>
+        <span class="contact-label">Telegram</span>
+        <a href="https://t.me/svitinotv" target="_blank" rel="noopener" class="contact-value">@svitinotv</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">◎</span>
+        <span class="contact-label">Сайт</span>
+        <a href="https://svitino.tv" class="contact-value">svitino.tv</a>
+      </div>
+    </div>
+    <div class="participate-block">
       <h2>Стать участником</h2>
       <p>Хотите стать героем проекта или предложить историю? Мы всегда ищем интересных людей и события для Свитино ТВ.</p>
-      <a href="mailto:info@svitino.tv?subject=Хочу стать участником SVITINO.TV" class="btn btn-primary">Написать нам</a>
+      <a href="mailto:info@svitino.tv?subject=Хочу стать участником SVITINO.TV" class="btn btn-stone">Написать нам</a>
     </div>
   </div>
 </div>
-
-<footer>
-  <div class="footer-logo">SVITINO<em>.TV</em></div>
-  <div class="footer-center">Деревня Свитино · 2025</div>
-  <nav aria-label="Footer navigation">
-    <ul class="footer-nav">
-      <li><a href="tv.html">ТВ</a></li>
-      <li><a href="heroes.html">Герои</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-</footer>
-
+<footer class="footer-simple"><span class="footer-simple-logo">SVITINO<em>.TV</em></span><span>Деревня Свитино · 2025</span></footer>
 <script src="js/nav.js"></script>
 </body>
 </html>

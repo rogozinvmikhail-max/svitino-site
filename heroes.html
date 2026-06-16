@@ -4,16 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Герои — SVITINO.TV</title>
-  <meta name="description" content="Герои медиа-проекта Свитино ТВ — люди, чьи истории мы рассказываем.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
-  <button class="nav-burger" aria-label="Меню" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-logo-main">SVITINO</span><span class="nav-logo-dot">.</span><span class="nav-logo-tv">TV</span></a>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -24,38 +20,32 @@
     <li><a href="contacts.html">Контакты</a></li>
   </ul>
 </nav>
-
 <div class="page">
-  <div class="page-hero">
-    <div class="badge">Люди проекта</div>
-    <h1>Герои Свитино</h1>
-    <p>Люди, чьи истории, дела и жизнь составляют основу нашего проекта.</p>
+  <div class="page-head">
+    <div class="page-head-inner">
+      <div class="page-badge">Люди проекта</div>
+      <h1>Герои Свитино</h1>
+      <p>Жители и участники, чьи истории, дела и жизнь составляют основу нашего проекта.</p>
+    </div>
   </div>
-
-  <div class="section">
-    <p class="section-sub">Первые герои проекта скоро появятся здесь. Хотите стать участником? <a href="contacts.html" style="color:var(--amber)">Напишите нам.</a></p>
-
-    <div class="cards">
-      <div class="hero-person-card">
-        <div class="person-avatar">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
+  <div class="page-content">
+    <div class="section-label">Участники</div>
+    <p style="font-family:var(--serif);font-style:italic;color:var(--text-muted);margin-bottom:0.5rem">Первые герои проекта скоро появятся здесь. Хотите стать участником? <a href="contacts.html" style="color:var(--rust)">Напишите нам.</a></p>
+    <div class="person-grid">
+      <div class="person-card">
+        <div class="person-avatar"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.6 3.6-6 8-6s8 2.4 8 6"/></svg></div>
         <div class="person-role">Герой проекта</div>
         <div class="person-name">Скоро</div>
         <div class="person-text">История этого героя появится в ближайшее время.</div>
       </div>
-      <div class="hero-person-card">
-        <div class="person-avatar">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
+      <div class="person-card">
+        <div class="person-avatar"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.6 3.6-6 8-6s8 2.4 8 6"/></svg></div>
         <div class="person-role">Герой проекта</div>
         <div class="person-name">Скоро</div>
         <div class="person-text">История этого героя появится в ближайшее время.</div>
       </div>
-      <div class="hero-person-card">
-        <div class="person-avatar">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
+      <div class="person-card">
+        <div class="person-avatar"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.6 3.6-6 8-6s8 2.4 8 6"/></svg></div>
         <div class="person-role">Герой проекта</div>
         <div class="person-name">Скоро</div>
         <div class="person-text">История этого героя появится в ближайшее время.</div>
@@ -63,20 +53,7 @@
     </div>
   </div>
 </div>
-
-<footer>
-  <div class="footer-logo">SVITINO<em>.TV</em></div>
-  <div class="footer-center">Деревня Свитино · 2025</div>
-  <nav aria-label="Footer navigation">
-    <ul class="footer-nav">
-      <li><a href="tv.html">ТВ</a></li>
-      <li><a href="heroes.html">Герои</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-</footer>
-
+<footer class="footer-simple"><span class="footer-simple-logo">SVITINO<em>.TV</em></span><span>Деревня Свитино · 2025</span></footer>
 <script src="js/nav.js"></script>
 </body>
 </html>

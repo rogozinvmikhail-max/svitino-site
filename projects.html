@@ -4,16 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Проекты — SVITINO.TV</title>
-  <meta name="description" content="Проекты медиа-платформы Свитино ТВ.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
-  <button class="nav-burger" aria-label="Меню" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-logo-main">SVITINO</span><span class="nav-logo-dot">.</span><span class="nav-logo-tv">TV</span></a>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -24,69 +20,35 @@
     <li><a href="contacts.html">Контакты</a></li>
   </ul>
 </nav>
-
 <div class="page">
-  <div class="page-hero">
-    <div class="badge">Инициативы</div>
-    <h1>Проекты Свитино</h1>
-    <p>Всё, что рождается, строится и живёт в рамках платформы.</p>
+  <div class="page-head">
+    <div class="page-head-inner">
+      <div class="page-badge">Инициативы</div>
+      <h1>Проекты Свитино</h1>
+      <p>Всё, что рождается, строится и живёт в рамках платформы.</p>
+    </div>
   </div>
-
-  <div class="section">
-    <p class="section-sub">Проекты платформы — от документальных съёмок до местных инициатив.</p>
-
-    <div class="cards">
-      <div class="card">
-        <div class="card-img">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">Документальный фильм</div>
-          <div class="card-title">Скоро</div>
-          <div class="card-text">Документальный проект медиа-платформы Свитино ТВ.</div>
-          <br>
-          <a href="film.html" class="btn btn-outline" style="font-size:0.78rem;padding:0.5rem 1.2rem">Подробнее</a>
-        </div>
+  <div class="page-content">
+    <div class="item-list">
+      <div class="item-row">
+        <div class="item-n">01</div>
+        <div><div class="item-title">Документальный фильм</div><div class="item-meta">В производстве · Медиа</div></div>
+        <a href="film.html" class="item-tag" style="cursor:pointer">Подробнее →</a>
       </div>
-      <div class="card">
-        <div class="card-img">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 2l-4 5-4-5"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">Медиа</div>
-          <div class="card-title">Свитино ТВ · Сезон 1</div>
-          <div class="card-text">Первый сезон видео-проекта о жизни и людях Свитино.</div>
-          <br>
-          <a href="tv.html" class="btn btn-outline" style="font-size:0.78rem;padding:0.5rem 1.2rem">Смотреть</a>
-        </div>
+      <div class="item-row">
+        <div class="item-n">02</div>
+        <div><div class="item-title">Свитино ТВ · Сезон 1</div><div class="item-meta">В эфире · Видео</div></div>
+        <a href="tv.html" class="item-tag" style="cursor:pointer">Смотреть →</a>
       </div>
-      <div class="card">
-        <div class="card-img">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">Скоро</div>
-          <div class="card-title">Следующий проект</div>
-          <div class="card-text">Новый проект платформы в разработке.</div>
-        </div>
+      <div class="item-row">
+        <div class="item-n">03</div>
+        <div><div class="item-title">Следующий проект</div><div class="item-meta">Скоро · В разработке</div></div>
+        <div class="item-tag">Скоро</div>
       </div>
     </div>
   </div>
 </div>
-
-<footer>
-  <div class="footer-logo">SVITINO<em>.TV</em></div>
-  <div class="footer-center">Деревня Свитино · 2025</div>
-  <nav aria-label="Footer navigation">
-    <ul class="footer-nav">
-      <li><a href="tv.html">ТВ</a></li>
-      <li><a href="heroes.html">Герои</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-</footer>
-
+<footer class="footer-simple"><span class="footer-simple-logo">SVITINO<em>.TV</em></span><span>Деревня Свитино · 2025</span></footer>
 <script src="js/nav.js"></script>
 </body>
 </html>

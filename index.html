@@ -5,17 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SVITINO.TV — Живая медиа-платформа</title>
   <meta name="description" content="Живая медиа-платформа о людях, проектах, историях и жизни деревни Свитино.">
+
+  <!-- Oswald: condensed bold — эхо металлических табличек мемориала -->
+  <!-- PT Serif: архивный, тёплый -->
+  <!-- Inter: нейтральный интерфейсный -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
+<!-- ── NAV ──────────────────────────────────── -->
+<nav class="nav">
+  <a class="nav-logo" href="index.html">
+    <span class="nav-logo-main">SVITINO</span><span class="nav-logo-dot">.</span><span class="nav-logo-tv">TV</span>
+  </a>
   <button class="nav-burger" aria-label="Меню" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
-    <li><a href="index.html">Главная</a></li>
+    <li><a href="index.html" class="active">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
     <li><a href="heroes.html">Герои</a></li>
     <li><a href="film.html">Фильм</a></li>
@@ -25,133 +36,264 @@
   </ul>
 </nav>
 
-<main>
-  <section class="hero">
-    <!-- Decorative archive photo wall -->
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-      <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
-    </div>
+<!-- ── HERO ─────────────────────────────────── -->
+<section class="hero">
+  <!-- Имитация gabion-стены: сетка из округлых «камней» -->
+  <div class="hero-stones" aria-hidden="true">
+    <svg class="stones-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="stones" x="0" y="0" width="180" height="120" patternUnits="userSpaceOnUse">
+          <ellipse cx="22" cy="20" rx="18" ry="14" fill="rgba(255,255,255,0.06)"/>
+          <ellipse cx="60" cy="15" rx="15" ry="12" fill="rgba(255,255,255,0.04)"/>
+          <ellipse cx="100" cy="22" rx="20" ry="15" fill="rgba(255,255,255,0.05)"/>
+          <ellipse cx="148" cy="18" rx="16" ry="13" fill="rgba(255,255,255,0.04)"/>
+          <ellipse cx="170" cy="28" rx="12" ry="10" fill="rgba(255,255,255,0.03)"/>
+          <ellipse cx="35" cy="48" rx="22" ry="16" fill="rgba(255,255,255,0.05)"/>
+          <ellipse cx="80" cy="50" rx="18" ry="14" fill="rgba(255,255,255,0.06)"/>
+          <ellipse cx="125" cy="45" rx="21" ry="15" fill="rgba(255,255,255,0.04)"/>
+          <ellipse cx="162" cy="52" rx="17" ry="13" fill="rgba(255,255,255,0.05)"/>
+          <ellipse cx="12" cy="75" rx="14" ry="11" fill="rgba(255,255,255,0.03)"/>
+          <ellipse cx="52" cy="78" rx="20" ry="14" fill="rgba(255,255,255,0.05)"/>
+          <ellipse cx="96" cy="74" rx="17" ry="13" fill="rgba(255,255,255,0.04)"/>
+          <ellipse cx="138" cy="80" rx="22" ry="15" fill="rgba(255,255,255,0.06)"/>
+          <ellipse cx="175" cy="76" rx="14" ry="11" fill="rgba(255,255,255,0.03)"/>
+          <ellipse cx="28" cy="102" rx="19" ry="14" fill="rgba(255,255,255,0.05)"/>
+          <ellipse cx="72" cy="108" rx="23" ry="14" fill="rgba(255,255,255,0.04)"/>
+          <ellipse cx="118" cy="104" rx="18" ry="13" fill="rgba(255,255,255,0.06)"/>
+          <ellipse cx="158" cy="106" rx="21" ry="15" fill="rgba(255,255,255,0.04)"/>
+          <!-- wire grid -->
+          <line x1="0" y1="0" x2="180" y2="0" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+          <line x1="0" y1="30" x2="180" y2="30" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+          <line x1="0" y1="60" x2="180" y2="60" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+          <line x1="0" y1="90" x2="180" y2="90" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+          <line x1="0" y1="0" x2="0" y2="120" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+          <line x1="45" y1="0" x2="45" y2="120" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+          <line x1="90" y1="0" x2="90" y2="120" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+          <line x1="135" y1="0" x2="135" y2="120" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#stones)"/>
+    </svg>
+  </div>
 
-    <div class="hero-main">
-      <div class="hero-eyebrow">Деревня Свитино &nbsp;·&nbsp; Наро-Фоминский район</div>
-
-      <h1>SVITINO<span class="dot">.</span><span class="tv">TV</span></h1>
-      <div class="hero-rule"></div>
-
-      <p class="hero-sub">Живая медиа-платформа о людях, проектах, историях и жизни Свитино.</p>
-      <p class="hero-season">Первый сезон уже начался</p>
-
-      <div class="hero-buttons">
-        <a href="tv.html" class="btn btn-primary">
-          <svg width="12" height="12" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
-          Свитино ТВ
-        </a>
-        <a href="heroes.html" class="btn btn-outline">Герои проекта</a>
-        <a href="contacts.html" class="btn btn-outline">Стать участником</a>
-      </div>
-    </div>
-
-    <div class="hero-strip">
-      <div class="strip-item">
-        <span class="strip-label">Сезон</span>
-        <span class="strip-val">Первый</span>
-      </div>
-      <div class="strip-item">
-        <span class="strip-label">Формат</span>
-        <span class="strip-val">Документальный</span>
-      </div>
-      <div class="strip-item">
-        <span class="strip-label">Статус</span>
-        <span class="strip-val" style="color:var(--amber)">В эфире</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="gabion-divider"></div>
-
-  <!-- About -->
-  <div class="section" style="padding-bottom:3rem">
-    <p class="section-eyebrow">О проекте</p>
-    <h2 class="section-title">Кино в деревне началось<br>ещё в 1945 году</h2>
-    <div class="about-strip">
-      <p>После окончания Великой Отечественной войны между двумя дубами устанавливали экран, и жители приходили со стульчиками — смотреть «Броненосца Потёмкина», «Чапаева», «Путёвку в жизнь». Это было первое знакомство с кинематографом того времени.</p>
-      <span class="about-source">Мемориальная табличка · Деревня Свитино</span>
+  <div class="hero-content">
+    <div class="hero-location">Деревня Свитино · Наро-Фоминский район</div>
+    <h1 class="hero-title">
+      <span class="hero-title-main">СВИТИНО</span>
+      <span class="hero-title-dot">.</span>
+      <span class="hero-title-tv">ТВ</span>
+    </h1>
+    <p class="hero-sub">Живая медиа-платформа<br>о людях и жизни деревни</p>
+    <div class="hero-actions">
+      <a href="tv.html" class="btn btn-stone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        Свитино ТВ
+      </a>
+      <a href="heroes.html" class="btn btn-ghost">Герои проекта</a>
     </div>
   </div>
 
-  <div class="gabion-divider"></div>
-
-  <!-- Projects preview -->
-  <div class="section">
-    <p class="section-eyebrow">Разделы</p>
-    <h2 class="section-title">Что есть на платформе</h2>
-    <p class="section-sub">Видео, истории жителей, документальный фильм и новости деревни.</p>
-    <div class="cards">
-      <a href="tv.html" class="card" style="text-decoration:none">
-        <div class="card-img">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 2l-4 5-4-5"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">Сезон 1</div>
-          <div class="card-title">Свитино ТВ</div>
-          <div class="card-text">Видео, репортажи и эфиры о жизни и людях деревни.</div>
-        </div>
-      </a>
-      <a href="heroes.html" class="card" style="text-decoration:none">
-        <div class="card-img">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">Люди проекта</div>
-          <div class="card-title">Герои</div>
-          <div class="card-text">Жители и участники, чьи истории составляют основу проекта.</div>
-        </div>
-      </a>
-      <a href="film.html" class="card" style="text-decoration:none">
-        <div class="card-img">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">В производстве</div>
-          <div class="card-title">Документальный фильм</div>
-          <div class="card-text">Фильм о Свитино — скоро.</div>
-        </div>
-      </a>
+  <div class="hero-strip">
+    <div class="strip-item">
+      <span class="strip-label">Сезон</span>
+      <span class="strip-val">Первый</span>
+    </div>
+    <div class="strip-item">
+      <span class="strip-label">Формат</span>
+      <span class="strip-val">Документальный</span>
+    </div>
+    <div class="strip-item">
+      <span class="strip-label">Статус</span>
+      <span class="strip-val strip-live">В эфире</span>
+    </div>
+    <div class="strip-item strip-item-cta">
+      <a href="contacts.html" class="strip-cta">Стать участником →</a>
     </div>
   </div>
-</main>
+</section>
 
-<footer>
-  <div class="footer-logo">SVITINO<em>.TV</em></div>
-  <div class="footer-center">Деревня Свитино · 2025</div>
-  <nav aria-label="Footer navigation">
-    <ul class="footer-nav">
-      <li><a href="tv.html">ТВ</a></li>
-      <li><a href="heroes.html">Герои</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
+<!-- ── STONE DIVIDER ─────────────────────────── -->
+<div class="stone-bar" aria-hidden="true">
+  <svg width="100%" height="24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <defs>
+      <pattern id="sb" x="0" y="0" width="80" height="24" patternUnits="userSpaceOnUse">
+        <ellipse cx="10" cy="12" rx="9" ry="7" fill="rgba(0,0,0,0.07)"/>
+        <ellipse cx="32" cy="10" rx="11" ry="8" fill="rgba(0,0,0,0.05)"/>
+        <ellipse cx="56" cy="13" rx="10" ry="7" fill="rgba(0,0,0,0.06)"/>
+        <ellipse cx="74" cy="9" rx="8" ry="6" fill="rgba(0,0,0,0.04)"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="24" fill="#d6d1c5"/>
+    <rect width="100%" height="24" fill="url(#sb)"/>
+  </svg>
+</div>
+
+<!-- ── ИСТОРИЯ ───────────────────────────────── -->
+<section class="section-history">
+  <div class="container">
+    <div class="history-layout">
+      <div class="history-left">
+        <div class="plaque">
+          <div class="plaque-icons">
+            <!-- Two oaks + film strip, from the actual memorial plaque -->
+            <svg width="44" height="40" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 32 C8 32 4 24 6 16 C8 8 14 6 18 10 C20 6 26 4 28 12 C30 6 36 8 36 18 C38 26 34 32 34 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="32" x2="30" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="20" y1="32" x2="20" y2="40" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="18" y="17" width="4" height="7" rx="0.5" fill="none" stroke="currentColor" stroke-width="1"/>
+              <line x1="19" y1="18" x2="19" y2="24" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="21" y1="18" x2="21" y2="24" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="18" y1="19.5" x2="22" y2="19.5" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="18" y1="21.5" x2="22" y2="21.5" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="18" y1="23" x2="22" y2="23" stroke="currentColor" stroke-width="0.5"/>
+            </svg>
+          </div>
+          <p class="plaque-text">После окончания Великой Отечественной войны на этом месте с 1945 года и до начала 1950-х по выходным дням приезжал киномеханик, устанавливал экран между двумя дубами и показывал жителям деревни кинофильмы.</p>
+          <p class="plaque-text">Все дети и свободные от работ в поле взрослые приходили со стульчиками для просмотра кино. Это было первое знакомство с кинематографом того времени.</p>
+          <div class="plaque-films">
+            <span class="plaque-film-label">Фильмы, которые увидели жители деревни:</span>
+            <em>Броненосец Потёмкин · Путёвка в жизнь · Чапаев</em>
+          </div>
+          <div class="plaque-source">Мемориальная табличка · Деревня Свитино</div>
+        </div>
+      </div>
+
+      <div class="history-right">
+        <div class="section-label">1945 — Сегодня</div>
+        <h2 class="section-heading">Кино здесь<br>не кончалось</h2>
+        <p class="section-body">Деревня Свитино хранит память о первом экране под открытым небом — и продолжает её в новом формате. SVITINO.TV — это документальная медиа-платформа, которая рассказывает о людях, проектах и жизни места.</p>
+        <a href="film.html" class="link-arrow">Документальный фильм →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── АРХИВНАЯ СТЕНА ─────────────────────────── -->
+<section class="section-photowall">
+  <div class="photowall-header container">
+    <div class="section-label">Архив</div>
+    <h2 class="section-heading section-heading-light">Фотографии<br>на камне</h2>
+  </div>
+  <!-- Masonry photo wall — как настоящая стена с фотографиями -->
+  <div class="photowall-grid">
+    <div class="photo-frame photo-frame--lg"><div class="photo-inner photo-inner--1"></div></div>
+    <div class="photo-frame photo-frame--sm"><div class="photo-inner photo-inner--2"></div></div>
+    <div class="photo-frame photo-frame--md"><div class="photo-inner photo-inner--3"></div></div>
+    <div class="photo-frame photo-frame--sm"><div class="photo-inner photo-inner--4"></div></div>
+    <div class="photo-frame photo-frame--md"><div class="photo-inner photo-inner--5"></div></div>
+    <div class="photo-frame photo-frame--lg"><div class="photo-inner photo-inner--6"></div></div>
+    <div class="photo-frame photo-frame--sm"><div class="photo-inner photo-inner--7"></div></div>
+    <div class="photo-frame photo-frame--md"><div class="photo-inner photo-inner--8"></div></div>
+    <div class="photo-frame photo-frame--sm"><div class="photo-inner photo-inner--9"></div></div>
+    <div class="photo-frame photo-frame--lg"><div class="photo-inner photo-inner--10"></div></div>
+    <div class="photo-frame photo-frame--md"><div class="photo-inner photo-inner--11"></div></div>
+    <div class="photo-frame photo-frame--sm"><div class="photo-inner photo-inner--12"></div></div>
+  </div>
+  <div class="photowall-caption container">
+    <p>Архив фотографий деревни Свитино. Оригинальная стена с чёрно-белыми снимками в чёрных рамках расположена на мемориальном комплексе.</p>
+    <a href="heroes.html" class="link-arrow link-arrow--light">Герои проекта →</a>
+  </div>
+</section>
+
+<!-- ── STONE DIVIDER ─────────────────────────── -->
+<div class="stone-bar" aria-hidden="true">
+  <svg width="100%" height="24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <defs>
+      <pattern id="sb2" x="0" y="0" width="80" height="24" patternUnits="userSpaceOnUse">
+        <ellipse cx="10" cy="12" rx="9" ry="7" fill="rgba(255,255,255,0.15)"/>
+        <ellipse cx="32" cy="10" rx="11" ry="8" fill="rgba(255,255,255,0.10)"/>
+        <ellipse cx="56" cy="13" rx="10" ry="7" fill="rgba(255,255,255,0.12)"/>
+        <ellipse cx="74" cy="9" rx="8" ry="6" fill="rgba(255,255,255,0.08)"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="24" fill="#2a2825"/>
+    <rect width="100%" height="24" fill="url(#sb2)"/>
+  </svg>
+</div>
+
+<!-- ── НАВИГАЦИЯ ПО РАЗДЕЛАМ ──────────────────── -->
+<section class="section-nav-cards">
+  <div class="container">
+    <div class="nav-cards-grid">
+
+      <a href="tv.html" class="nav-card">
+        <div class="nav-card-num">01</div>
+        <div class="nav-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 3l-4 4-4-4"/></svg>
+        </div>
+        <div class="nav-card-title">Свитино ТВ</div>
+        <div class="nav-card-text">Видео, репортажи и эфиры первого сезона</div>
+        <div class="nav-card-arrow">→</div>
+      </a>
+
+      <a href="heroes.html" class="nav-card">
+        <div class="nav-card-num">02</div>
+        <div class="nav-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.6 3.6-6 8-6s8 2.4 8 6"/></svg>
+        </div>
+        <div class="nav-card-title">Герои</div>
+        <div class="nav-card-text">Жители и участники, чьи истории составляют проект</div>
+        <div class="nav-card-arrow">→</div>
+      </a>
+
+      <a href="film.html" class="nav-card">
+        <div class="nav-card-num">03</div>
+        <div class="nav-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="1"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
+        </div>
+        <div class="nav-card-title">Документальный фильм</div>
+        <div class="nav-card-text">Фильм о деревне — в производстве</div>
+        <div class="nav-card-arrow">→</div>
+      </a>
+
+      <a href="contacts.html" class="nav-card nav-card--accent">
+        <div class="nav-card-num">04</div>
+        <div class="nav-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="nav-card-title">Стать участником</div>
+        <div class="nav-card-text">Герои, авторы, соратники — пишите нам</div>
+        <div class="nav-card-arrow">→</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── МЕМОРИАЛ ОТСЫЛКА ──────────────────────── -->
+<section class="section-memorial">
+  <div class="container">
+    <div class="memorial-block">
+      <div class="memorial-years">1941 — 1945</div>
+      <p class="memorial-text">В деревне Свитино живут и помнят. Мемориальный комплекс с именами жителей, прошедших войну, — часть общего пространства, где теперь рассказываются новые истории.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">SVITINO<span class="footer-logo-dot">.</span><span class="footer-logo-tv">TV</span></div>
+        <p class="footer-tagline">Деревня Свитино · Наро-Фоминский район<br>Московская область · 2025</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="tv.html">Свитино ТВ</a></li>
+          <li><a href="heroes.html">Герои</a></li>
+          <li><a href="film.html">Фильм</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="projects.html">Проекты</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© SVITINO.TV 2025 · Все права защищены</span>
+      <span>Живая медиа-платформа</span>
+    </div>
+  </div>
 </footer>
 
 <script src="js/nav.js"></script>

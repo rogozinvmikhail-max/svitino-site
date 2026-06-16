@@ -4,16 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Фильм — SVITINO.TV</title>
-  <meta name="description" content="Документальный фильм — проект медиа-платформы Свитино ТВ.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">SVITINO<em>.TV</em></a>
-  <button class="nav-burger" aria-label="Меню" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><span class="nav-logo-main">SVITINO</span><span class="nav-logo-dot">.</span><span class="nav-logo-tv">TV</span></a>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -24,57 +20,30 @@
     <li><a href="contacts.html">Контакты</a></li>
   </ul>
 </nav>
-
 <div class="page">
-  <div class="page-hero">
-    <div class="badge">Документальный фильм</div>
-    <h1>Скоро</h1>
-    <p>Документальный фильм медиа-платформы Свитино ТВ. Название и детали — скоро.</p>
+  <div class="page-head">
+    <div class="page-head-inner">
+      <div class="page-badge">Документальный фильм</div>
+      <h1>Скоро</h1>
+      <p>Документальный фильм медиа-платформы Свитино ТВ. Название и детали — скоро.</p>
+    </div>
   </div>
-
-  <div class="section">
+  <div class="page-content">
     <div class="film-poster">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:var(--stone);margin-bottom:.5rem"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
-      <div class="film-poster-label">Скоро</div>
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(200,194,182,0.3)" stroke-width="1"><rect x="2" y="2" width="20" height="20" rx="1"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
+      <div class="film-poster-title">Скоро</div>
       <div class="film-poster-sub">Документальный · SVITINO.TV</div>
     </div>
-
     <div class="film-meta">
-      <div class="film-meta-item">
-        <div class="film-meta-label">Жанр</div>
-        <div class="film-meta-val">Документальный</div>
-      </div>
-      <div class="film-meta-item">
-        <div class="film-meta-label">Статус</div>
-        <div class="film-meta-val" style="color:var(--amber)">В производстве</div>
-      </div>
-      <div class="film-meta-item">
-        <div class="film-meta-label">Платформа</div>
-        <div class="film-meta-val">SVITINO.TV</div>
-      </div>
-      <div class="film-meta-item">
-        <div class="film-meta-label">Сезон</div>
-        <div class="film-meta-val">1</div>
-      </div>
+      <div class="film-meta-item"><div class="film-meta-label">Жанр</div><div class="film-meta-val">Документальный</div></div>
+      <div class="film-meta-item"><div class="film-meta-label">Статус</div><div class="film-meta-val film-meta-val--live">В производстве</div></div>
+      <div class="film-meta-item"><div class="film-meta-label">Платформа</div><div class="film-meta-val">SVITINO.TV</div></div>
+      <div class="film-meta-item"><div class="film-meta-label">Сезон</div><div class="film-meta-val">1</div></div>
     </div>
-
     <p class="film-desc">Документальный проект медиа-платформы Свитино ТВ. Подробности появятся здесь.</p>
   </div>
 </div>
-
-<footer>
-  <div class="footer-logo">SVITINO<em>.TV</em></div>
-  <div class="footer-center">Деревня Свитино · 2025</div>
-  <nav aria-label="Footer navigation">
-    <ul class="footer-nav">
-      <li><a href="tv.html">ТВ</a></li>
-      <li><a href="heroes.html">Герои</a></li>
-      <li><a href="news.html">Новости</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-</footer>
-
+<footer class="footer-simple"><span class="footer-simple-logo">SVITINO<em>.TV</em></span><span>Деревня Свитино · 2025</span></footer>
 <script src="js/nav.js"></script>
 </body>
 </html>
