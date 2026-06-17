@@ -234,7 +234,7 @@ footer strong { color: var(--paper); font-family: var(--head); }
 .page-banner .badge { color: #fff; background: rgba(34,42,48,.5); border-color: rgba(255,255,255,.4); backdrop-filter: blur(4px); }
 
 /* секция-контент на бумаге */
-.content { padding: 4.5rem 0; }
+.content { padding: 6rem 0; }
 .content > .wrap > h2 { font-family: var(--head); font-size: clamp(1.5rem,3.5vw,2.1rem); color: var(--green-deep); margin-bottom: .8rem; }
 .content .lead-in { font-size: 1.1rem; color: var(--ink-soft); max-width: 62ch; margin-bottom: 2.6rem; }
 .content .lead-in a { color: var(--terracotta); font-weight: 600; }
@@ -322,7 +322,7 @@ footer strong { color: var(--paper); font-family: var(--head); }
   .news-item { flex-direction: column; gap: .6rem; }
   .news-date { width: auto; display: flex; gap: .5rem; align-items: baseline; text-align: left; }
   .news-date .d { font-size: 1.5rem; }
-  .content { padding: 3rem 0; }
+  .content { padding: 4rem 0; }
   .participate { padding: 1.6rem; }
 }
 
