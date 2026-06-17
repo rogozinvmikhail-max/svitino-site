@@ -36,18 +36,52 @@
     </div>
   </header>
 
+  <!-- Главная новость -->
   <section class="content">
     <div class="wrap">
+      <h2>Главное</h2>
+      <p class="lead-in">Самое важное в проекте — крупным планом.</p>
+      <a class="featured reveal" href="tv.html" style="display:block;">
+        <img src="img/event-culture.jpg" alt="Запуск первого сезона Свитино ТВ">
+        <div class="meta">
+          <span class="tag">01 июня 2025 · Запуск</span>
+          <h3>Первый сезон Свитино ТВ начался</h3>
+          <p>Медиа-платформа официально запустила первый сезон. Впереди — герои, истории и документальный фильм о посёлке.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Лента -->
+  <section class="content" style="background:var(--sand);">
+    <div class="wrap">
       <h2>Лента новостей</h2>
+      <p class="lead-in">Все обновления проекта по порядку.</p>
       <div class="news-list">
-        <article class="news-item">
+        <article class="news-item reveal">
           <div class="news-date"><span class="d">01</span><span class="m">Июнь 2025</span></div>
           <div><span class="tag">Запуск</span><h3>Первый сезон Свитино ТВ начался</h3><p>Медиа-платформа Свитино ТВ официально запустила первый сезон. Впереди — герои, истории и документальный фильм о посёлке.</p></div>
         </article>
-        <article class="news-item">
+        <article class="news-item reveal">
           <div class="news-date"><span class="d">—</span><span class="m">Скоро</span></div>
-          <div><span class="tag">Анонс</span><h3>Следующая новость появится здесь</h3><p>Следите за обновлениями проекта.</p></div>
+          <div><span class="tag">Анонс</span><h3>Первый выпуск Свитино ТВ</h3><p>Готовим премьеру первого выпуска сезона. Дата — скоро.</p></div>
         </article>
+        <article class="news-item reveal">
+          <div class="news-date"><span class="d">—</span><span class="m">Скоро</span></div>
+          <div><span class="tag">Анонс</span><h3>Открытие раздела «Архив»</h3><p>Соберём чёрно-белую летопись посёлка. Поделитесь старыми фото.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <h2 class="reveal">Не пропускайте новости</h2>
+      <p class="reveal">Подпишитесь на наш Telegram — там анонсы выпусков, события и жизнь Свитино в реальном времени.</p>
+      <div class="hero-actions reveal" style="justify-content:center;">
+        <a href="https://t.me/svitinotv" target="_blank" rel="noopener" class="btn btn-primary">Telegram @svitinotv</a>
+        <a href="contacts.html" class="btn btn-ghost">Связаться с нами</a>
       </div>
     </div>
   </section>
@@ -64,5 +98,13 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
 </body>
 </html>
