@@ -164,7 +164,7 @@ nav {
 .rubric-tag { font-family: var(--head); font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta); }
 .rubric h3 { font-size: 1.5rem; margin: .35rem 0 .35rem; color: #fff; }
 .rubric p { font-size: .9rem; color: rgba(245,242,234,.8); }
-.r-tv::before    { background-image: url("../img/building-facade.jpg"); }
+.r-tv::before    { background-image: url("../img/community-event.jpg"); }
 .r-heroes::before{ background-image: url("../img/memorial-plaza.jpg"); }
 .r-film::before  { background-image: url("../img/memorial-cinema.jpg"); }
 .r-news::before  { background-image: url("../img/event-culture.jpg"); }
@@ -217,7 +217,7 @@ footer strong { color: var(--paper); font-family: var(--head); }
 .page-banner .wrap { position: relative; z-index: 2; padding-top: calc(var(--nav-h) + 2.5rem); padding-bottom: 2.6rem; }
 .page-banner h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); font-weight: 800; }
 .page-banner .lead { color: rgba(245,242,234,.92); max-width: 56ch; margin-top: .8rem; font-size: clamp(1rem,2vw,1.2rem); text-shadow: 0 1px 10px rgba(20,24,28,.5); }
-.b-tv > .bg      { background-image: url("../img/building-facade.jpg"); }
+.b-tv > .bg      { background-image: url("../img/community-event.jpg"); }
 .b-heroes > .bg  { background-image: url("../img/memorial-plaza.jpg"); }
 .b-film > .bg    { background-image: url("../img/memorial-cinema-angle.jpg"); }
 .b-news > .bg    { background-image: url("../img/event-culture.jpg"); }
