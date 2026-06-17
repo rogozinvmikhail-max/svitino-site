@@ -36,15 +36,42 @@
     </div>
   </header>
 
+  <!-- Контакты -->
   <section class="content">
     <div class="wrap">
+      <h2>Как с нами связаться</h2>
+      <p class="lead-in">Мы открыты и всегда на связи — пишите удобным способом.</p>
       <ul class="contact-list">
         <li><span class="ci" aria-hidden="true">✉️</span><div><div class="k">Email</div><a href="mailto:info@svitino.tv">info@svitino.tv</a></div></li>
         <li><span class="ci" aria-hidden="true">📱</span><div><div class="k">Telegram</div><a href="https://t.me/svitinotv" target="_blank" rel="noopener">@svitinotv</a></div></li>
         <li><span class="ci" aria-hidden="true">🌐</span><div><div class="k">Сайт</div><a href="https://svitino.tv" target="_blank" rel="noopener">svitino.tv</a></div></li>
       </ul>
+    </div>
+  </section>
 
-      <div class="participate">
+  <!-- Чем помочь -->
+  <section class="content" style="background:var(--sand);">
+    <div class="wrap">
+      <h2>Чем вы можете помочь</h2>
+      <p class="lead-in">Свитино ТВ делают сами жители. Вот как стать частью проекта.</p>
+      <div class="grid-cards">
+        <article class="card-lite reveal">
+          <div class="body"><span class="tag">Герой</span><h3>Стать героем</h3><p>У вас интересная судьба или дело — расскажите, мы снимем выпуск.</p><a href="mailto:info@svitino.tv?subject=Хочу стать героем SVITINO.TV" class="more">Написать →</a></div>
+        </article>
+        <article class="card-lite reveal">
+          <div class="body"><span class="tag">Архив</span><h3>Поделиться фото</h3><p>Сохранились старые снимки Свитино — добавим их в летопись посёлка.</p><a href="mailto:info@svitino.tv?subject=Старые фото Свитино" class="more">Прислать →</a></div>
+        </article>
+        <article class="card-lite reveal">
+          <div class="body"><span class="tag">Сюжет</span><h3>Предложить новость</h3><p>Событие или история, о которой стоит рассказать всему посёлку.</p><a href="mailto:info@svitino.tv?subject=Новость для SVITINO.TV" class="more">Сообщить →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Участие -->
+  <section class="content">
+    <div class="wrap">
+      <div class="participate reveal">
         <h2>Стать участником</h2>
         <p>Хотите стать героем проекта или предложить историю? Мы всегда ищем интересных людей и события для Свитино ТВ.</p>
         <a href="mailto:info@svitino.tv?subject=Хочу стать участником SVITINO.TV" class="btn btn-primary">Написать нам</a>
@@ -64,5 +91,13 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
 </body>
 </html>
