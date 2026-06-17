@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVITINO.TV - Вариант «Солнечный»</title>
+  <meta name="description" content="Живая медиа-платформа Свитино - вариант дизайна «Солнечный».">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --green:#4a7a3f; --green-deep:#2f4a26; --leaf:#86b85a;
+    --sun:#F2B705; --terra:#E07A3E; --sky:#7fb6d6;
+    --ink:#23311c; --ink-soft:#5b6b50;
+    --cream:#FBF6E9; --cream2:#F3EAD2; --line:#E6DBBF;
+    --head:'Manrope',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+    --nav-h:72px; --r:20px; --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  h1,h2,h3{font-family:var(--head);line-height:1.04;letter-spacing:-.02em;text-wrap:balance}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 2rem}
+  :focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:6px}
+
+  /* nav */
+  nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;
+     padding:0 2rem;z-index:100;background:rgba(251,246,233,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .logo{font-family:var(--head);font-weight:800;font-size:1.3rem;color:var(--green-deep)}
+  .logo span{color:var(--terra)}
+  .links{display:flex;gap:.2rem;list-style:none}
+  .links a{padding:.45rem .8rem;border-radius:30px;font-size:.9rem;font-weight:600;color:var(--ink-soft);transition:.2s}
+  .links a:hover{color:var(--green-deep);background:rgba(242,183,5,.18)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger span{display:block;width:24px;height:2px;background:var(--green-deep);border-radius:2px}
+
+  /* hero */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url("img/sign-summer.jpg") center/cover;}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(251,246,233,.96) 0%,rgba(251,246,233,.8) 40%,rgba(251,246,233,.15) 75%,transparent 100%)}
+  .sun{position:absolute;top:11%;right:9%;width:230px;height:230px;border-radius:50%;
+     background:radial-gradient(circle,#FFD43B 0%,#F2B705 55%,rgba(242,183,5,0) 72%);filter:blur(2px);z-index:1;animation:glow 6s ease-in-out infinite}
+  @keyframes glow{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.07);opacity:1}}
+  .hero-inner{position:relative;z-index:2;max-width:660px;padding-top:var(--nav-h)}
+  .pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--sun);color:#3a2c00;font-family:var(--head);font-weight:700;
+     font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:30px;margin-bottom:1.4rem}
+  .hero h1{font-size:clamp(3rem,9vw,6.5rem);font-weight:800;color:var(--green-deep);margin-bottom:1.1rem}
+  .hero h1 span{color:var(--terra)}
+  .hero p{font-size:clamp(1.1rem,2.4vw,1.45rem);color:var(--ink-soft);max-width:30rem;margin-bottom:2rem}
+  .hero p b{color:var(--ink)}
+  .btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--head);font-weight:700;font-size:.95rem;
+     padding:.9rem 1.7rem;border-radius:30px;border:2px solid transparent;cursor:pointer;transition:transform .2s var(--ease),background .2s,border-color .2s}
+  .btn-sun{background:var(--terra);color:#fff}
+  .btn-sun:hover{background:#c9652f;transform:translateY(-2px)}
+  .btn-out{border-color:var(--green-deep);color:var(--green-deep)}
+  .btn-out:hover{background:var(--green-deep);color:#fff;transform:translateY(-2px)}
+
+  /* story */
+  .story{padding:6rem 0;background:var(--cream2)}
+  .story-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:center}
+  .eyebrow{font-family:var(--head);font-weight:800;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);margin-bottom:1rem}
+  .story h2{font-size:clamp(2rem,4.5vw,3rem);color:var(--green-deep);margin-bottom:1.3rem}
+  .story p{color:var(--ink-soft);margin-bottom:1rem;max-width:60ch}
+  .story p b{color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+  .chip{font-family:var(--head);font-weight:600;font-size:.82rem;padding:.4rem .9rem;border-radius:30px;background:#fff;border:1px solid var(--line);color:var(--green-deep)}
+  .story img{width:100%;border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;box-shadow:0 24px 50px rgba(47,74,38,.22);rotate:1.5deg}
+
+  /* rubrics */
+  .sec{padding:6rem 0}
+  .sec-head{text-align:center;max-width:620px;margin:0 auto 3rem}
+  .sec-head h2{font-size:clamp(1.9rem,4.5vw,2.8rem);color:var(--green-deep);margin-bottom:.6rem}
+  .sec-head p{color:var(--ink-soft)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .card{position:relative;border-radius:var(--r);overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;
+     color:#fff;box-shadow:0 10px 26px rgba(47,74,38,.14);transition:transform .25s var(--ease),box-shadow .25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(47,74,38,.26)}
+  .card .ph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s var(--ease)}
+  .card:hover .ph{transform:scale(1.07)}
+  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(47,74,38,.9))}
+  .card .t{position:relative;z-index:2;padding:1.5rem}
+  .card .tag{font-family:var(--head);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sun)}
+  .card h3{font-size:1.45rem;margin:.3rem 0}
+  .card p{font-size:.9rem;color:rgba(255,255,255,.82)}
+  .p-tv .ph{background-image:url("img/building-facade.jpg")}
+  .p-he .ph{background-image:url("img/memorial-plaza.jpg")}
+  .p-fi .ph{background-image:url("img/memorial-cinema.jpg")}
+  .p-ne .ph{background-image:url("img/event-culture.jpg")}
+  .p-pr .ph{background-image:url("img/teens-wall.jpg")}
+  .p-ar .ph{background-image:url("img/sign-forest.jpg")}
+
+  /* cta */
+  .cta{padding:6rem 0;text-align:center;background:linear-gradient(135deg,var(--sun),var(--terra));color:#fff}
+  .cta h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:1rem;color:#fff}
+  .cta p{max-width:48ch;margin:0 auto 2rem;color:rgba(255,255,255,.92)}
+  .cta .btn-light{background:#fff;color:var(--terra)}
+  .cta .btn-light:hover{transform:translateY(-2px)}
+
+  footer{background:var(--green-deep);color:rgba(251,246,233,.7);padding:2.5rem 0;font-size:.9rem}
+  .foot{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+  footer strong{color:#fff;font-family:var(--head)}
+  .badge-v{position:fixed;bottom:1rem;left:1rem;z-index:200;background:var(--green-deep);color:var(--sun);
+     font-family:var(--head);font-weight:700;font-size:.72rem;padding:.4rem .9rem;border-radius:30px}
+
+  @media(max-width:860px){.story-grid{grid-template-columns:1fr;gap:2rem}.grid{grid-template-columns:1fr 1fr}.sun{width:150px;height:150px}}
+  @media(max-width:680px){
+    nav{padding:0 1.1rem}
+    .links{position:fixed;top:var(--nav-h);left:0;right:0;flex-direction:column;gap:.2rem;padding:1rem;background:rgba(251,246,233,.98);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.3s}
+    .links.open{transform:translateY(0)} .burger{display:flex}
+    .wrap{padding:0 1.25rem}.grid{grid-template-columns:1fr}.btns{flex-direction:column}.btns .btn{justify-content:center}
+    .story,.sec,.cta{padding:4rem 0}.hero::after{background:linear-gradient(180deg,rgba(251,246,233,.55),rgba(251,246,233,.96))}
+  }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="variant-sun.html">SVITINO<span>.TV</span></a>
+  <button class="burger" aria-label="Меню" onclick="document.querySelector('.links').classList.toggle('open')"><span></span><span></span><span></span></button>
+  <ul class="links">
+    <li><a href="variant-sun.html">Главная</a></li>
+    <li><a href="tv.html">Свитино ТВ</a></li>
+    <li><a href="heroes.html">Герои</a></li>
+    <li><a href="film.html">Фильм</a></li>
+    <li><a href="news.html">Новости</a></li>
+    <li><a href="contacts.html">Контакты</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <span class="pill">☀ Живая медиа-платформа</span>
+    <h1>SVITINO<span>.TV</span></h1>
+    <p>С <b>1945 года</b> между двух дубов в Свитино светил экран. Сегодня это живая летопись людей, событий и историй посёлка.</p>
+    <div class="btns">
+      <a href="tv.html" class="btn btn-sun">▶ Смотреть ТВ</a>
+      <a href="#story" class="btn btn-out">Наша история</a>
+    </div>
+  </div>
+</header>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div>
+      <p class="eyebrow">С 1945 года</p>
+      <h2>Экран между двух дубов</h2>
+      <p>После войны по выходным в деревню приезжал <b>киномеханик</b>, натягивал экран между двух дубов и показывал жителям кино.</p>
+      <p>Это было <b>первое знакомство Свитино с кинематографом</b>. SVITINO.TV - продолжение того самого экрана, спустя 80 лет.</p>
+      <div class="chips"><span class="chip">Броненосец Потёмкин</span><span class="chip">Путёвка в жизнь</span><span class="chip">Чапаев</span></div>
+    </div>
+    <div><img src="img/memorial-cinema.jpg" alt="Табличка: два дуба и киноплёнка"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><h2>Что мы снимаем</h2><p>Жизнь Свитино - люди, память, события и проекты посёлка.</p></div>
+    <div class="grid">
+      <a class="card p-tv" href="tv.html"><div class="ph"></div><div class="t"><span class="tag">Эфир</span><h3>Свитино ТВ</h3><p>Видеосюжеты о жизни посёлка.</p></div></a>
+      <a class="card p-he" href="heroes.html"><div class="ph"></div><div class="t"><span class="tag">1941-1945</span><h3>Герои</h3><p>Память о земляках.</p></div></a>
+      <a class="card p-fi" href="film.html"><div class="ph"></div><div class="t"><span class="tag">Кино</span><h3>Фильм</h3><p>Наследие кинопоказов.</p></div></a>
+      <a class="card p-ne" href="news.html"><div class="ph"></div><div class="t"><span class="tag">Сегодня</span><h3>Новости</h3><p>События и праздники.</p></div></a>
+      <a class="card p-pr" href="projects.html"><div class="ph"></div><div class="t"><span class="tag">Сообщество</span><h3>Проекты</h3><p>Инициативы жителей.</p></div></a>
+      <a class="card p-ar" href="contacts.html"><div class="ph"></div><div class="t"><span class="tag">Архив</span><h3>Летопись</h3><p>Чёрно-белая история.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Свитино - это мы с вами</h2>
+    <p>Есть история, событие или герой, о котором стоит рассказать? Станьте частью живой летописи посёлка.</p>
+    <a href="contacts.html" class="btn btn-light">Стать участником</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong>SVITINO.TV</strong> - живая медиа-платформа Свитино</div>
+    <div>© 2026</div>
+  </div>
+</footer>
+
+<div class="badge-v">Вариант: Солнечный</div>
+</body>
+</html>
