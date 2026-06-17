@@ -36,23 +36,59 @@
     </div>
   </header>
 
+  <!-- Премьера -->
   <section class="content">
     <div class="wrap">
+      <h2>Премьера сезона</h2>
+      <p class="lead-in">Первый выпуск открывает сезон — знакомство с посёлком, его людьми и местами.</p>
+      <div class="featured reveal">
+        <img src="img/sign-forest.jpg" alt="Свитино — кадр первого выпуска">
+        <a class="play-btn" href="#" aria-label="Скоро в эфире">▶</a>
+        <div class="meta">
+          <span class="tag">Премьера · Сезон 1 · Выпуск 1</span>
+          <h3>Свитино: с чего всё начинается</h3>
+          <p>Скоро в эфире. Подпишитесь, чтобы не пропустить первый выпуск.</p>
+        </div>
+      </div>
+      <div class="stat-band reveal">
+        <div class="cell"><div class="k">Сезон</div><div class="v accent">01</div></div>
+        <div class="cell"><div class="k">Статус</div><div class="v">В эфире</div></div>
+        <div class="cell"><div class="k">Формат</div><div class="v">Документальный</div></div>
+        <div class="cell"><div class="k">Платформа</div><div class="v">svitino.tv</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Выпуски -->
+  <section class="content" style="background:var(--sand);">
+    <div class="wrap">
       <h2>Выпуски первого сезона</h2>
-      <p class="lead-in">Здесь появятся выпуски первого сезона. Следите за обновлениями или <a href="contacts.html">предложите сюжет</a>.</p>
+      <p class="lead-in">Лента выпусков пополняется. Следите за обновлениями или <a href="contacts.html">предложите сюжет</a>.</p>
       <div class="grid-cards">
-        <article class="card-lite is-soon">
-          <div class="card-thumb" aria-hidden="true">▶</div>
-          <div class="body"><span class="tag">Сезон 1 · Выпуск 1</span><h3>Скоро</h3><p>Первый выпуск проекта Свитино ТВ.</p></div>
+        <article class="card-lite is-soon reveal">
+          <div class="card-thumb" style="background-image:url('img/yard-summer.jpg')" aria-hidden="true"></div>
+          <div class="body"><span class="tag">Сезон 1 · Выпуск 2</span><h3>Скоро</h3><p>Жизнь посёлка летом: люди, дворы, события.</p></div>
         </article>
-        <article class="card-lite is-soon">
-          <div class="card-thumb" aria-hidden="true">▶</div>
-          <div class="body"><span class="tag">Сезон 1 · Выпуск 2</span><h3>Скоро</h3><p>Следующий выпуск в производстве.</p></div>
+        <article class="card-lite is-soon reveal">
+          <div class="card-thumb" style="background-image:url('img/event-culture.jpg')" aria-hidden="true"></div>
+          <div class="body"><span class="tag">Сезон 1 · Выпуск 3</span><h3>Скоро</h3><p>Культурные события и праздники Свитино.</p></div>
         </article>
-        <article class="card-lite is-soon">
-          <div class="card-thumb" aria-hidden="true">▶</div>
-          <div class="body"><span class="tag">Сезон 1 · Выпуск 3</span><h3>Скоро</h3><p>Следующий выпуск в производстве.</p></div>
+        <article class="card-lite is-soon reveal">
+          <div class="card-thumb" style="background-image:url('img/teens-wall.jpg')" aria-hidden="true"></div>
+          <div class="body"><span class="tag">Сезон 1 · Выпуск 4</span><h3>Скоро</h3><p>Молодёжь посёлка: о чём они мечтают.</p></div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <h2 class="reveal">Есть сюжет для эфира?</h2>
+      <p class="reveal">Событие, история или человек, о котором стоит снять выпуск? Расскажите — и он может попасть в сезон.</p>
+      <div class="hero-actions reveal" style="justify-content:center;">
+        <a href="contacts.html" class="btn btn-primary">Предложить сюжет</a>
+        <a href="film.html" class="btn btn-ghost">О документальном фильме</a>
       </div>
     </div>
   </section>
@@ -69,5 +105,13 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
 </body>
 </html>

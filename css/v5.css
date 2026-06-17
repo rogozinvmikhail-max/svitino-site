@@ -325,3 +325,30 @@ footer strong { color: var(--paper); font-family: var(--head); }
   .content { padding: 3rem 0; }
   .participate { padding: 1.6rem; }
 }
+
+/* ════════ Доп. компоненты (featured / stat-band) ════════ */
+.featured { position: relative; border-radius: var(--r); overflow: hidden; aspect-ratio: 16/8; margin-bottom: 1.5rem; }
+.featured img { width: 100%; height: 100%; object-fit: cover; }
+.featured::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30,34,40,.25) 0%, rgba(30,34,40,.4) 55%, rgba(30,34,40,.9) 100%); }
+.featured .meta { position: absolute; z-index: 2; inset: auto 0 0 0; padding: 2rem; color: var(--paper); }
+.featured .meta .tag { font-family: var(--head); font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta); }
+.featured .meta h3 { font-size: clamp(1.4rem, 3.2vw, 2.2rem); color: #fff; margin: .35rem 0 .3rem; }
+.featured .meta p { color: rgba(245,242,234,.85); max-width: 52ch; font-size: .95rem; }
+.play-btn { position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 78px; height: 78px; border-radius: 50%; background: rgba(192,107,62,.92); color: #fff;
+  display: grid; place-items: center; font-size: 1.7rem; padding-left: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35); transition: transform .2s var(--ease), background .2s; }
+.featured:hover .play-btn { transform: translate(-50%,-50%) scale(1.08); background: var(--terracotta); }
+
+.stat-band { background: var(--graphite); border-radius: var(--r); display: grid; grid-template-columns: repeat(4,1fr); overflow: hidden; }
+.stat-band .cell { padding: 1.5rem 1.6rem; border-right: 1px solid rgba(255,255,255,.08); }
+.stat-band .cell:last-child { border-right: none; }
+.stat-band .k { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(245,242,234,.5); margin-bottom: .35rem; }
+.stat-band .v { font-family: var(--head); font-weight: 800; font-size: 1.4rem; color: var(--paper); }
+.stat-band .v.accent { color: var(--terracotta); }
+@media (max-width: 720px) {
+  .stat-band { grid-template-columns: 1fr 1fr; }
+  .stat-band .cell:nth-child(2) { border-right: none; }
+  .stat-band .cell:nth-child(1), .stat-band .cell:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,.08); }
+  .featured .meta { padding: 1.25rem; }
+}
