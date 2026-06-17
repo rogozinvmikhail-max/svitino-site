@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVITINO.TV - Вариант «Архив»</title>
+  <meta name="description" content="Живая медиа-платформа Свитино - вариант дизайна «Архив», редакционно-документальный.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --paper:#F4F0E6; --paper2:#EBE6D7; --ink:#1B1916; --ink-soft:#54504a;
+    --accent:#A8442C; --line:#cfc7b3;
+    --serif:'Playfair Display',Georgia,serif; --body:'PT Serif',Georgia,serif;
+    --r:4px; --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+  a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 2rem}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .mono-photo{filter:grayscale(1) contrast(1.05) sepia(.12)}
+
+  /* masthead */
+  .masthead{border-bottom:3px double var(--ink);padding-top:1.4rem}
+  .mast-top{display:flex;justify-content:space-between;font-family:var(--body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:.8rem}
+  .mast-title{text-align:center;font-family:var(--serif);font-weight:800;font-size:clamp(2.6rem,8vw,5.5rem);letter-spacing:-.01em;line-height:1;padding:.3rem 0}
+  .mast-title span{color:var(--accent)}
+  .mast-sub{text-align:center;font-style:italic;color:var(--ink-soft);padding:.4rem 0 1rem;font-size:1.05rem}
+  nav.subnav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,240,230,.96);backdrop-filter:blur(6px);z-index:50}
+  .subnav ul{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem;list-style:none;padding:.5rem 0}
+  .subnav a{font-family:var(--body);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding:.35rem .9rem;transition:.2s}
+  .subnav a:hover{color:var(--accent)}
+
+  /* lead story */
+  .lead-story{padding:3.5rem 0 2rem;border-bottom:1px solid var(--line)}
+  .ls-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:3rem;align-items:start}
+  .kicker{font-family:var(--body);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+  .ls-grid h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.04;margin-bottom:1.2rem}
+  .ls-grid .body p{margin-bottom:1rem;color:#2c2925}
+  .ls-grid .body p:first-of-type::first-letter{font-family:var(--serif);font-weight:800;font-size:3.4rem;float:left;line-height:.8;padding:.1rem .5rem .1rem 0;color:var(--accent)}
+  .ls-photo figure{margin:0}.ls-photo img{width:100%;border:1px solid var(--line)}
+  .ls-photo figcaption{font-size:.8rem;font-style:italic;color:var(--ink-soft);padding-top:.5rem;border-top:1px solid var(--line);margin-top:.5rem}
+  .films{margin-top:1.4rem;font-size:.9rem;color:var(--ink-soft);font-style:italic}
+  .films b{font-style:normal;font-weight:700;color:var(--ink)}
+
+  /* film strip divider */
+  .filmstrip{height:34px;background:var(--ink);margin:2.5rem 0;position:relative;display:flex;align-items:center;gap:14px;padding:0 10px;overflow:hidden}
+  .filmstrip::before,.filmstrip::after{content:"";position:absolute;left:0;right:0;height:7px;background-image:repeating-linear-gradient(90deg,transparent 0 9px,var(--paper) 9px 17px)}
+  .filmstrip::before{top:4px}.filmstrip::after{bottom:4px}
+
+  /* sections grid */
+  .sections{padding:1rem 0 4rem}
+  .sec-title{font-family:var(--serif);font-weight:800;font-size:1.6rem;border-bottom:2px solid var(--ink);padding-bottom:.5rem;margin-bottom:1.6rem;display:flex;align-items:baseline;justify-content:space-between}
+  .sec-title span{font-family:var(--body);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+  .art{border-top:1px solid var(--line);padding-top:1rem}
+  .art a{display:block}
+  .art img{width:100%;aspect-ratio:3/2;object-fit:cover;margin-bottom:.8rem;border:1px solid var(--line)}
+  .art .cat{font-family:var(--body);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
+  .art h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;line-height:1.15;margin-bottom:.4rem}
+  .art p{font-size:.92rem;color:var(--ink-soft)}
+  .art:hover h3{color:var(--accent)}
+
+  /* memoriam */
+  .memoriam{background:var(--ink);color:var(--paper);padding:3.5rem 0;text-align:center}
+  .memoriam .yrs{font-family:var(--serif);font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:.04em}
+  .memoriam p{max-width:54ch;margin:1rem auto 0;color:rgba(244,240,230,.75);font-style:italic}
+  .memoriam a{display:inline-block;margin-top:1.6rem;border:1px solid var(--paper);padding:.7rem 1.6rem;font-family:var(--body);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+  .memoriam a:hover{background:var(--paper);color:var(--ink)}
+
+  footer{border-top:3px double var(--ink);padding:2rem 0;font-size:.85rem;color:var(--ink-soft)}
+  .foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  footer strong{font-family:var(--serif);color:var(--ink)}
+  .badge-v{position:fixed;bottom:1rem;left:1rem;z-index:200;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:.72rem;letter-spacing:.1em;padding:.4rem .9rem}
+
+  @media(max-width:820px){.ls-grid{grid-template-columns:1fr;gap:1.5rem}.cols{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.wrap{padding:0 1.25rem}.cols{grid-template-columns:1fr}.subnav a{padding:.35rem .55rem;font-size:.72rem}}
+  </style>
+</head>
+<body>
+
+<div class="wrap masthead">
+  <div class="mast-top"><span>Свитино · Живая летопись</span><span>Основано на кино с 1945</span></div>
+  <div class="mast-title">SVITINO<span>.TV</span></div>
+  <div class="mast-sub">Документальная медиа-платформа о людях, памяти и жизни посёлка</div>
+</div>
+<nav class="subnav">
+  <div class="wrap"><ul>
+    <li><a href="variant-archive.html">Главная</a></li>
+    <li><a href="tv.html">Свитино ТВ</a></li>
+    <li><a href="heroes.html">Герои</a></li>
+    <li><a href="film.html">Фильм</a></li>
+    <li><a href="news.html">Новости</a></li>
+    <li><a href="contacts.html">Контакты</a></li>
+  </ul></div>
+</nav>
+
+<main>
+  <section class="lead-story">
+    <div class="wrap ls-grid">
+      <div>
+        <p class="kicker">Главная история · с 1945 года</p>
+        <h1>Экран между двух дубов</h1>
+        <div class="body">
+          <p>После Великой Отечественной войны, с 1945 и до начала 1950-х, по выходным в Свитино приезжал киномеханик. Он натягивал экран между двух дубов и показывал жителям кино - дети и свободные от полевых работ взрослые приходили со стульчиками.</p>
+          <p>Это было первое знакомство деревни с кинематографом. Сегодня SVITINO.TV продолжает тот самый экран - спустя восемьдесят лет, уже как живая медиа-летопись посёлка.</p>
+          <p class="films">На том экране показывали: <b>«Броненосец Потёмкин»</b>, <b>«Путёвку в жизнь»</b>, <b>«Чапаева»</b> и другие фильмы.</p>
+        </div>
+      </div>
+      <div class="ls-photo">
+        <figure>
+          <img class="mono-photo" src="img/memorial-cinema.jpg" alt="Мемориальная табличка: два дуба и киноплёнка">
+          <figcaption>Памятный знак на месте послевоенных киносеансов. Свитино.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="filmstrip" aria-hidden="true"></div></div>
+
+  <section class="sections">
+    <div class="wrap">
+      <div class="sec-title">Разделы летописи <span>Свитино / 2026</span></div>
+      <div class="cols">
+        <article class="art"><a href="tv.html"><img class="mono-photo" src="img/building-facade.jpg" alt=""><div class="cat">Эфир</div><h3>Свитино ТВ</h3><p>Видеосюжеты и репортажи о жизни посёлка.</p></a></article>
+        <article class="art"><a href="heroes.html"><img class="mono-photo" src="img/memorial-plaza.jpg" alt=""><div class="cat">Память · 1941-1945</div><h3>Герои</h3><p>Имена земляков, не вернувшихся с войны.</p></a></article>
+        <article class="art"><a href="film.html"><img class="mono-photo" src="img/sign-forest.jpg" alt=""><div class="cat">Кино</div><h3>Фильм</h3><p>Наследие кинопоказов и новый документальный.</p></a></article>
+        <article class="art"><a href="news.html"><img class="mono-photo" src="img/event-culture.jpg" alt=""><div class="cat">Сегодня</div><h3>Новости</h3><p>События и культурная жизнь Свитино.</p></a></article>
+        <article class="art"><a href="projects.html"><img class="mono-photo" src="img/teens-wall.jpg" alt=""><div class="cat">Сообщество</div><h3>Проекты</h3><p>Инициативы жителей и молодёжи.</p></a></article>
+        <article class="art"><a href="heroes.html"><img class="mono-photo" src="img/archive-gallery.jpg" alt=""><div class="cat">Тогда</div><h3>Архив</h3><p>Чёрно-белая летопись посёлка.</p></a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="memoriam">
+    <div class="wrap">
+      <div class="yrs">1941 - 1945</div>
+      <p>Светлой памяти жителей Свитино, павших в Великой Отечественной войне. Мы храним их имена и истории.</p>
+      <a href="heroes.html">Открыть «Герои»</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong>SVITINO.TV</strong> · живая медиа-платформа Свитино</div>
+    <div>© 2026 · info@svitino.tv</div>
+  </div>
+</footer>
+
+<div class="badge-v">Вариант: Архив</div>
+</body>
+</html>
