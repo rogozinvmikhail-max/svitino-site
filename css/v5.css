@@ -202,6 +202,96 @@ footer strong { color: var(--paper); font-family: var(--head); }
   .hero-scroll, .hero-badge .dot { animation: none; }
 }
 
+/* ════════════════════════════════════════════════
+   ВНУТРЕННИЕ СТРАНИЦЫ
+   ════════════════════════════════════════════════ */
+
+/* фото-баннер страницы */
+.page-banner {
+  position: relative; min-height: 46vh; display: flex; align-items: flex-end;
+  color: var(--paper); overflow: hidden;
+}
+.page-banner > .bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.page-banner::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(34,42,48,.45) 0%, rgba(30,34,40,.5) 50%, rgba(30,34,40,.9) 100%); }
+.page-banner .wrap { position: relative; z-index: 2; padding-top: calc(var(--nav-h) + 2.5rem); padding-bottom: 2.6rem; }
+.page-banner h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); font-weight: 800; }
+.page-banner .lead { color: rgba(245,242,234,.92); max-width: 56ch; margin-top: .8rem; font-size: clamp(1rem,2vw,1.2rem); text-shadow: 0 1px 10px rgba(20,24,28,.5); }
+.b-tv > .bg      { background-image: url("../img/building-facade.jpg"); }
+.b-heroes > .bg  { background-image: url("../img/memorial-plaza.jpg"); }
+.b-film > .bg    { background-image: url("../img/memorial-cinema-angle.jpg"); }
+.b-news > .bg    { background-image: url("../img/event-culture.jpg"); }
+.b-projects > .bg{ background-image: url("../img/teens-wall.jpg"); }
+.b-contacts > .bg{ background-image: url("../img/yard-summer.jpg"); }
+
+/* бейдж-рубрика */
+.badge {
+  display: inline-block; font-family: var(--head); font-size: .72rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta);
+  background: rgba(192,107,62,.12); border: 1px solid rgba(192,107,62,.4);
+  padding: .3rem .85rem; border-radius: 20px; margin-bottom: 1rem;
+}
+.page-banner .badge { color: #fff; background: rgba(34,42,48,.5); border-color: rgba(255,255,255,.4); backdrop-filter: blur(4px); }
+
+/* секция-контент на бумаге */
+.content { padding: 4.5rem 0; }
+.content > .wrap > h2 { font-family: var(--head); font-size: clamp(1.5rem,3.5vw,2.1rem); color: var(--green-deep); margin-bottom: .8rem; }
+.content .lead-in { font-size: 1.1rem; color: var(--ink-soft); max-width: 62ch; margin-bottom: 2.6rem; }
+.content .lead-in a { color: var(--terracotta); font-weight: 600; }
+
+/* светлые карточки */
+.grid-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px,1fr)); gap: 1.5rem; }
+.card-lite { background: #fff; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+  transition: transform .22s var(--ease), box-shadow .22s, border-color .22s; }
+.card-lite:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(34,42,48,.13); border-color: var(--stone); }
+.card-thumb { aspect-ratio: 16/10; background: var(--sand) center/cover no-repeat; display: grid; place-items: center;
+  font-size: 2.4rem; color: var(--stone); border-bottom: 1px solid var(--line); }
+.card-lite .body { padding: 1.25rem 1.35rem 1.5rem; }
+.card-lite .tag { font-family: var(--head); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--terracotta); }
+.card-lite h3 { font-size: 1.2rem; color: var(--green-deep); margin: .35rem 0 .5rem; }
+.card-lite p { font-size: .92rem; color: var(--ink-soft); }
+.card-lite .more { display: inline-block; margin-top: .9rem; font-family: var(--head); font-weight: 700; font-size: .85rem; color: var(--green); }
+.card-lite .more:hover { color: var(--green-deep); }
+.card-lite.is-soon { opacity: .82; }
+
+/* люди (Герои) — круглые */
+.card-person { text-align: center; padding: 2rem 1.35rem; }
+.card-person .avatar { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.1rem;
+  background: var(--sand) center/cover no-repeat; display: grid; place-items: center; font-size: 2.6rem; color: var(--stone); border: 1px solid var(--line); }
+
+/* новости */
+.news-list { display: flex; flex-direction: column; gap: 1rem; }
+.news-item { display: flex; gap: 1.4rem; padding: 1.4rem 1.5rem; background: #fff; border: 1px solid var(--line);
+  border-radius: var(--r); transition: border-color .2s, transform .2s; }
+.news-item:hover { border-color: var(--stone); transform: translateX(3px); }
+.news-date { flex-shrink: 0; width: 74px; text-align: center; }
+.news-date .d { font-family: var(--head); font-size: 2rem; font-weight: 800; line-height: 1; color: var(--terracotta); }
+.news-date .m { font-size: .78rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .05em; }
+.news-item .tag { font-family: var(--head); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); }
+.news-item h3 { font-size: 1.08rem; color: var(--green-deep); margin: .25rem 0; }
+.news-item p { font-size: .92rem; color: var(--ink-soft); }
+
+/* фильм */
+.film-poster { position: relative; max-width: 720px; margin: 0 auto 2.6rem; border-radius: var(--r); overflow: hidden; aspect-ratio: 16/9; }
+.film-poster img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.3) brightness(.7); }
+.film-poster .cap { position: absolute; inset: auto 0 0 0; padding: 1.6rem; background: linear-gradient(transparent, rgba(30,34,40,.85)); color: var(--paper); }
+.film-poster .cap .t { font-family: var(--head); font-weight: 800; font-size: 1.5rem; }
+.film-info { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 1rem; margin-bottom: 2.4rem; }
+.film-info .item { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.2rem; }
+.film-info .k { font-size: .74rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .25rem; }
+.film-info .v { font-family: var(--head); font-weight: 700; }
+
+/* контакты */
+.contact-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; max-width: 560px; }
+.contact-list li { display: flex; align-items: center; gap: 1.1rem; padding: 1.2rem 1.4rem; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.contact-list .ci { font-size: 1.4rem; width: 2rem; text-align: center; }
+.contact-list .k { font-size: .78rem; color: var(--ink-soft); margin-bottom: .15rem; }
+.contact-list a { color: var(--terracotta); font-weight: 600; }
+.contact-list a:hover { color: var(--crimson); }
+.participate { background: var(--green-deep); color: var(--paper); border-radius: var(--r); padding: 2.4rem; margin-top: 2.6rem; }
+.participate h2 { font-size: 1.6rem; color: #fff; margin-bottom: .5rem; }
+.participate p { color: rgba(245,242,234,.85); margin-bottom: 1.5rem; max-width: 54ch; }
+
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 920px) {
   .story-grid, .memory-grid { grid-template-columns: 1fr; gap: 2.2rem; }
@@ -225,4 +315,13 @@ footer strong { color: var(--paper); font-family: var(--head); }
   .hero-actions .btn { justify-content: center; }
   .section, .story, .cta { padding: 4rem 0; }
   .rubrics { grid-template-columns: 1fr; }
+}
+
+/* адаптив внутренних страниц */
+@media (max-width: 600px) {
+  .news-item { flex-direction: column; gap: .6rem; }
+  .news-date { width: auto; display: flex; gap: .5rem; align-items: baseline; text-align: left; }
+  .news-date .d { font-size: 1.5rem; }
+  .content { padding: 3rem 0; }
+  .participate { padding: 1.6rem; }
 }

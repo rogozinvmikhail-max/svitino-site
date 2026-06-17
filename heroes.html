@@ -4,27 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Герои — SVITINO.TV</title>
-  <meta name="description" content="Герои медиа-проекта Свитино ТВ — люди, чьи истории мы рассказываем.">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .hero-card { text-align: center; }
-    .hero-card .card-img {
-      border-radius: 50%;
-      width: 120px; height: 120px;
-      margin: 1.5rem auto 1rem;
-      aspect-ratio: 1;
-      font-size: 3rem;
-    }
-    .hero-card .card-body { padding-bottom: 1.5rem; }
-  </style>
+  <meta name="description" content="Память о земляках Свитино, не вернувшихся с Великой Отечественной войны, и герои наших историй.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v5.css">
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">SVITINO<span>.TV</span></a>
-  <button class="nav-burger" aria-label="Меню">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -36,47 +26,55 @@
   </ul>
 </nav>
 
-<div class="page">
-  <div class="page-hero">
-    <div class="coming-soon">Люди проекта</div>
-    <h1>Герои <span style="color:var(--accent)">Свитино</span></h1>
-    <p>Люди, чьи истории, дела и жизнь составляют основу нашего проекта.</p>
-  </div>
+<main>
+  <header class="page-banner b-heroes">
+    <div class="bg" role="img" aria-label="Мемориал 1941–1945 в Свитино"></div>
+    <div class="wrap">
+      <span class="badge">Память</span>
+      <h1>Герои Свитино</h1>
+      <p class="lead">Имена земляков, не вернувшихся с Великой Отечественной, — и истории людей, которыми живёт посёлок сегодня.</p>
+    </div>
+  </header>
 
-  <div class="section">
-    <p class="section-sub">Первые герои проекта скоро появятся здесь. Хотите стать участником? <a href="contacts.html" style="color:var(--accent)">Напишите нам.</a></p>
-
-    <div class="cards">
-      <div class="card hero-card">
-        <div class="card-img">👤</div>
-        <div class="card-body">
-          <div class="card-tag">Герой проекта</div>
-          <div class="card-title">Скоро</div>
-          <div class="card-text">История этого героя появится в ближайшее время.</div>
+  <!-- стена памяти -->
+  <section class="content memory" style="padding:0;">
+    <div class="wrap" style="padding-top:4.5rem;padding-bottom:4.5rem;">
+      <div class="memory-grid">
+        <div>
+          <p class="eyebrow">Стена памяти</p>
+          <div class="memory-years">1941 <span>—</span> 1945</div>
+          <p>На плитах мемориала выбиты имена жителей Свитино, павших в Великой Отечественной войне. Мы храним их память и собираем истории земляков — чтобы помнили.</p>
+          <a href="contacts.html" class="btn btn-ghost">Поделиться историей</a>
         </div>
-      </div>
-      <div class="card hero-card">
-        <div class="card-img">👤</div>
-        <div class="card-body">
-          <div class="card-tag">Герой проекта</div>
-          <div class="card-title">Скоро</div>
-          <div class="card-text">История этого героя появится в ближайшее время.</div>
-        </div>
-      </div>
-      <div class="card hero-card">
-        <div class="card-img">👤</div>
-        <div class="card-body">
-          <div class="card-tag">Герой проекта</div>
-          <div class="card-title">Скоро</div>
-          <div class="card-text">История этого героя появится в ближайшее время.</div>
+        <div class="memory-media">
+          <img src="img/heroes-names.jpg" alt="Мемориальная стена с именами павших жителей Свитино, 1941–1945">
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+
+  <!-- герои историй -->
+  <section class="content">
+    <div class="wrap">
+      <h2>Герои наших историй</h2>
+      <p class="lead-in">Герои наших сюжетов — жители, чьи дела и судьбы составляют живую летопись Свитино. Первые истории скоро появятся здесь. <a href="contacts.html">Знаете такого человека?</a></p>
+      <div class="grid-cards">
+        <article class="card-lite card-person is-soon"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
+        <article class="card-lite card-person is-soon"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
+        <article class="card-lite card-person is-soon"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <strong>SVITINO.TV</strong> — живая медиа-платформа &nbsp;·&nbsp; 2025
+  <div class="wrap foot-grid">
+    <div><strong>SVITINO.TV</strong> — живая медиа-платформа Свитино</div>
+    <div class="foot-links">
+      <a href="tv.html">Свитино ТВ</a><a href="heroes.html">Герои</a><a href="film.html">Фильм</a><a href="contacts.html">Контакты</a>
+    </div>
+    <div>© 2026</div>
+  </div>
 </footer>
 
 <script src="js/nav.js"></script>

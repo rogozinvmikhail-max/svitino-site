@@ -4,57 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Фильм — SVITINO.TV</title>
-  <meta name="description" content="Документальный фильм — проект медиа-платформы Свитино ТВ.">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .film-poster {
-      width: 100%;
-      max-width: 640px;
-      aspect-ratio: 16/9;
-      background: linear-gradient(135deg, #1a1500 0%, #2a1f00 50%, #0c0c0c 100%);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 3rem;
-      gap: 0.5rem;
-    }
-    .film-poster .icon { font-size: 3rem; }
-    .film-poster .label {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-    }
-    .film-poster .sublabel { color: var(--text-muted); font-size: 0.9rem; }
-
-    .film-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
-    .film-info-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem 1.25rem;
-    }
-    .film-info-item .fi-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
-    .film-info-item .fi-val { font-size: 1rem; font-weight: 600; }
-
-    .film-desc { color: var(--text-muted); line-height: 1.8; max-width: 700px; }
-  </style>
+  <meta name="description" content="Кино в Свитино: наследие кинопоказов между двух дубов с 1945 года и новый документальный проект.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v5.css">
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">SVITINO<span>.TV</span></a>
-  <button class="nav-burger" aria-label="Меню">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -66,47 +26,57 @@
   </ul>
 </nav>
 
-<div class="page">
-  <div class="page-hero">
-    <div class="coming-soon">Документальный фильм</div>
-    <h1><span style="color:var(--accent)">Скоро</span></h1>
-    <p>Документальный фильм медиа-платформы Свитино ТВ. Название и детали — скоро.</p>
-  </div>
-
-  <div class="section">
-    <div class="film-poster">
-      <div class="icon">🎬</div>
-      <div class="label">Скоро</div>
-      <div class="sublabel">Документальный фильм · SVITINO.TV</div>
+<main>
+  <header class="page-banner b-film">
+    <div class="bg" role="img" aria-label="Мемориальная табличка с двумя дубами и киноплёнкой"></div>
+    <div class="wrap">
+      <span class="badge">Кино в Свитино</span>
+      <h1>Фильм</h1>
+      <p class="lead">Кино здесь началось с экрана между двух дубов в 1945-м. Сегодня мы продолжаем эту традицию — документальным проектом о посёлке.</p>
     </div>
+  </header>
 
-    <div class="film-info">
-      <div class="film-info-item">
-        <div class="fi-label">Жанр</div>
-        <div class="fi-val">Документальный</div>
-      </div>
-      <div class="film-info-item">
-        <div class="fi-label">Статус</div>
-        <div class="fi-val" style="color:var(--accent)">В производстве</div>
-      </div>
-      <div class="film-info-item">
-        <div class="fi-label">Платформа</div>
-        <div class="fi-val">SVITINO.TV</div>
-      </div>
-      <div class="film-info-item">
-        <div class="fi-label">Сезон</div>
-        <div class="fi-val">1</div>
+  <!-- наследие -->
+  <section class="content" style="background:var(--sand);">
+    <div class="wrap">
+      <p class="eyebrow">С 1945 года</p>
+      <h2 style="font-family:var(--head);color:var(--green-deep);font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:1.1rem;">Экран между двух дубов</h2>
+      <p class="lead-in" style="margin-bottom:1.4rem;">После войны по выходным в деревню приезжал киномеханик, натягивал экран между двух дубов и показывал кино. Это было первое знакомство Свитино с кинематографом.</p>
+      <div class="story-films">
+        <span class="film-chip">Броненосец Потёмкин</span>
+        <span class="film-chip">Путёвка в жизнь</span>
+        <span class="film-chip">Чапаев</span>
+        <span class="film-chip">…и другие фильмы</span>
       </div>
     </div>
+  </section>
 
-    <p class="film-desc">
-      Документальный проект медиа-платформы Свитино ТВ. Подробности появятся здесь.
-    </p>
-  </div>
-</div>
+  <!-- новый фильм -->
+  <section class="content">
+    <div class="wrap">
+      <div class="film-poster">
+        <img src="img/sign-forest.jpg" alt="Свитино — место съёмок документального проекта">
+        <div class="cap"><span class="badge">Документальный · в производстве</span><div class="t">Скоро</div></div>
+      </div>
+      <div class="film-info">
+        <div class="item"><div class="k">Жанр</div><div class="v">Документальный</div></div>
+        <div class="item"><div class="k">Статус</div><div class="v" style="color:var(--terracotta)">В производстве</div></div>
+        <div class="item"><div class="k">Платформа</div><div class="v">SVITINO.TV</div></div>
+        <div class="item"><div class="k">Сезон</div><div class="v">1</div></div>
+      </div>
+      <p class="lead-in">Документальный проект медиа-платформы Свитино ТВ о посёлке, его людях и памяти. Название и детали — скоро.</p>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <strong>SVITINO.TV</strong> — живая медиа-платформа &nbsp;·&nbsp; 2025
+  <div class="wrap foot-grid">
+    <div><strong>SVITINO.TV</strong> — живая медиа-платформа Свитино</div>
+    <div class="foot-links">
+      <a href="tv.html">Свитино ТВ</a><a href="heroes.html">Герои</a><a href="film.html">Фильм</a><a href="contacts.html">Контакты</a>
+    </div>
+    <div>© 2026</div>
+  </div>
 </footer>
 
 <script src="js/nav.js"></script>

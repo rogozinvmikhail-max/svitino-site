@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Проекты — SVITINO.TV</title>
-  <meta name="description" content="Проекты медиа-платформы Свитино ТВ.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Проекты и инициативы медиа-платформы Свитино: фильм, ТВ и местные начинания.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v5.css">
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">SVITINO<span>.TV</span></a>
-  <button class="nav-burger" aria-label="Меню">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -25,53 +26,46 @@
   </ul>
 </nav>
 
-<div class="page">
-  <div class="page-hero">
-    <div class="coming-soon">Инициативы</div>
-    <h1>Проекты <span style="color:var(--accent)">Свитино</span></h1>
-    <p>Всё, что рождается, строится и живёт в рамках платформы.</p>
-  </div>
+<main>
+  <header class="page-banner b-projects">
+    <div class="bg" role="img" aria-label="Молодёжь Свитино"></div>
+    <div class="wrap">
+      <span class="badge">Сообщество</span>
+      <h1>Проекты</h1>
+      <p class="lead">Всё, что рождается и живёт в рамках платформы: от документальных съёмок до инициатив жителей и молодёжи Свитино.</p>
+    </div>
+  </header>
 
-  <div class="section">
-    <p class="section-sub">Проекты платформы — от документальных съёмок до местных инициатив.</p>
-
-    <div class="cards">
-      <div class="card">
-        <div class="card-img">🎬</div>
-        <div class="card-body">
-          <div class="card-tag">Документальный фильм</div>
-          <div class="card-title">Скоро</div>
-          <div class="card-text">Документальный проект медиа-платформы Свитино ТВ.</div>
-          <br>
-          <a href="film.html" class="btn btn-outline" style="font-size:0.85rem; padding:0.5rem 1rem;">Подробнее</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img">📺</div>
-        <div class="card-body">
-          <div class="card-tag">Медиа</div>
-          <div class="card-title">Свитино ТВ · Сезон 1</div>
-          <div class="card-text">Первый сезон видео-проекта о жизни и людях Свитино.</div>
-          <br>
-          <a href="tv.html" class="btn btn-outline" style="font-size:0.85rem; padding:0.5rem 1rem;">Смотреть</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img">✦</div>
-        <div class="card-body">
-          <div class="card-tag">Скоро</div>
-          <div class="card-title">Следующий проект</div>
-          <div class="card-text">Новый проект платформы в разработке.</div>
-        </div>
+  <section class="content">
+    <div class="wrap">
+      <h2>Проекты платформы</h2>
+      <p class="lead-in">Проекты платформы — медиа, кино и местные начинания. Есть идея? <a href="contacts.html">Расскажите нам.</a></p>
+      <div class="grid-cards">
+        <article class="card-lite">
+          <div class="card-thumb" style="background-image:url('img/memorial-cinema.jpg')"></div>
+          <div class="body"><span class="tag">Документальный фильм</span><h3>Скоро</h3><p>Документальный проект о посёлке, его людях и памяти.</p><a href="film.html" class="more">Подробнее →</a></div>
+        </article>
+        <article class="card-lite">
+          <div class="card-thumb" style="background-image:url('img/building-facade.jpg')"></div>
+          <div class="body"><span class="tag">Медиа</span><h3>Свитино ТВ · Сезон 1</h3><p>Первый сезон видео-проекта о жизни и людях Свитино.</p><a href="tv.html" class="more">Смотреть →</a></div>
+        </article>
+        <article class="card-lite is-soon">
+          <div class="card-thumb" aria-hidden="true">✦</div>
+          <div class="body"><span class="tag">Скоро</span><h3>Следующий проект</h3><p>Новая инициатива платформы в разработке.</p></div>
+        </article>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+</main>
 
 <footer>
-  <strong>SVITINO.TV</strong> — живая медиа-платформа &nbsp;·&nbsp; 2025
+  <div class="wrap foot-grid">
+    <div><strong>SVITINO.TV</strong> — живая медиа-платформа Свитино</div>
+    <div class="foot-links">
+      <a href="tv.html">Свитино ТВ</a><a href="heroes.html">Герои</a><a href="film.html">Фильм</a><a href="contacts.html">Контакты</a>
+    </div>
+    <div>© 2026</div>
+  </div>
 </footer>
 
 <script src="js/nav.js"></script>

@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Свитино ТВ — SVITINO.TV</title>
-  <meta name="description" content="Видео и эфиры медиа-платформы Свитино ТВ.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Видеосюжеты, репортажи и эфиры о жизни и людях Свитино.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v5.css">
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">SVITINO<span>.TV</span></a>
-  <button class="nav-burger" aria-label="Меню">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Главная</a></li>
     <li><a href="tv.html">Свитино ТВ</a></li>
@@ -25,47 +26,46 @@
   </ul>
 </nav>
 
-<div class="page">
-  <div class="page-hero">
-    <div class="coming-soon">Сезон 1</div>
-    <h1>Свитино <span style="color:var(--accent)">ТВ</span></h1>
-    <p>Видео, репортажи и эфиры о жизни и людях Свитино.</p>
-  </div>
+<main>
+  <header class="page-banner b-tv">
+    <div class="bg" role="img" aria-label="Современное здание медиацентра Свитино"></div>
+    <div class="wrap">
+      <span class="badge">● Эфир · Сезон 1</span>
+      <h1>Свитино ТВ</h1>
+      <p class="lead">Видеосюжеты, репортажи и эфиры о жизни, событиях и людях посёлка — продолжение того самого экрана, что светил между двух дубов с 1945 года.</p>
+    </div>
+  </header>
 
-  <div class="section">
-    <p class="section-sub">Здесь появятся выпуски первого сезона. Следите за обновлениями.</p>
-
-    <div class="cards">
-      <div class="card">
-        <div class="card-img">▶</div>
-        <div class="card-body">
-          <div class="card-tag">Сезон 1 · Выпуск 1</div>
-          <div class="card-title">Скоро</div>
-          <div class="card-text">Первый выпуск проекта Свитино ТВ.</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">▶</div>
-        <div class="card-body">
-          <div class="card-tag">Сезон 1 · Выпуск 2</div>
-          <div class="card-title">Скоро</div>
-          <div class="card-text">Следующий выпуск в разработке.</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">▶</div>
-        <div class="card-body">
-          <div class="card-tag">Сезон 1 · Выпуск 3</div>
-          <div class="card-title">Скоро</div>
-          <div class="card-text">Следующий выпуск в разработке.</div>
-        </div>
+  <section class="content">
+    <div class="wrap">
+      <h2>Выпуски первого сезона</h2>
+      <p class="lead-in">Здесь появятся выпуски первого сезона. Следите за обновлениями или <a href="contacts.html">предложите сюжет</a>.</p>
+      <div class="grid-cards">
+        <article class="card-lite is-soon">
+          <div class="card-thumb" aria-hidden="true">▶</div>
+          <div class="body"><span class="tag">Сезон 1 · Выпуск 1</span><h3>Скоро</h3><p>Первый выпуск проекта Свитино ТВ.</p></div>
+        </article>
+        <article class="card-lite is-soon">
+          <div class="card-thumb" aria-hidden="true">▶</div>
+          <div class="body"><span class="tag">Сезон 1 · Выпуск 2</span><h3>Скоро</h3><p>Следующий выпуск в производстве.</p></div>
+        </article>
+        <article class="card-lite is-soon">
+          <div class="card-thumb" aria-hidden="true">▶</div>
+          <div class="body"><span class="tag">Сезон 1 · Выпуск 3</span><h3>Скоро</h3><p>Следующий выпуск в производстве.</p></div>
+        </article>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+</main>
 
 <footer>
-  <strong>SVITINO.TV</strong> — живая медиа-платформа &nbsp;·&nbsp; 2025
+  <div class="wrap foot-grid">
+    <div><strong>SVITINO.TV</strong> — живая медиа-платформа Свитино</div>
+    <div class="foot-links">
+      <a href="tv.html">Свитино ТВ</a><a href="heroes.html">Герои</a><a href="film.html">Фильм</a><a href="contacts.html">Контакты</a>
+    </div>
+    <div>© 2026</div>
+  </div>
 </footer>
 
 <script src="js/nav.js"></script>
