@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════
-   SVITINO.TV — v5  «Экран между двух дубов»
+   SVITINO.TV - v5  «Экран между двух дубов»
    Дизайн-система: см. DESIGN.md. Палитра выведена из фото Свитино.
    ════════════════════════════════════════════════════════════ */
 
@@ -254,7 +254,7 @@ footer strong { color: var(--paper); font-family: var(--head); }
 .card-lite .more:hover { color: var(--green-deep); }
 .card-lite.is-soon { opacity: .82; }
 
-/* люди (Герои) — круглые */
+/* люди (Герои) - круглые */
 .card-person { text-align: center; padding: 2rem 1.35rem; }
 .card-person .avatar { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.1rem;
   background: var(--sand) center/cover no-repeat; display: grid; place-items: center; font-size: 2.6rem; color: var(--stone); border: 1px solid var(--line); }
