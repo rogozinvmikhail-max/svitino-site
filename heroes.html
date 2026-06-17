@@ -30,38 +30,82 @@
   <header class="page-banner b-heroes">
     <div class="bg" role="img" aria-label="Мемориал 1941–1945 в Свитино"></div>
     <div class="wrap">
-      <span class="badge">Память</span>
+      <span class="badge">Память и люди</span>
       <h1>Герои Свитино</h1>
       <p class="lead">Имена земляков, не вернувшихся с Великой Отечественной, — и истории людей, которыми живёт посёлок сегодня.</p>
     </div>
   </header>
 
-  <!-- стена памяти -->
+  <!-- Стена памяти (графит) -->
   <section class="content memory" style="padding:0;">
     <div class="wrap" style="padding-top:4.5rem;padding-bottom:4.5rem;">
       <div class="memory-grid">
-        <div>
+        <div class="reveal">
           <p class="eyebrow">Стена памяти</p>
           <div class="memory-years">1941 <span>—</span> 1945</div>
           <p>На плитах мемориала выбиты имена жителей Свитино, павших в Великой Отечественной войне. Мы храним их память и собираем истории земляков — чтобы помнили.</p>
           <a href="contacts.html" class="btn btn-ghost">Поделиться историей</a>
         </div>
-        <div class="memory-media">
+        <div class="memory-media reveal">
           <img src="img/heroes-names.jpg" alt="Мемориальная стена с именами павших жителей Свитино, 1941–1945">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- герои историй -->
+  <!-- Герой выпуска (featured) -->
   <section class="content">
     <div class="wrap">
+      <h2>Герой выпуска</h2>
+      <p class="lead-in">Каждый сезон мы рассказываем истории жителей — тех, кто создаёт жизнь посёлка.</p>
+      <div class="featured reveal">
+        <img src="img/event-culture.jpg" alt="Жители Свитино на культурном событии">
+        <div class="meta">
+          <span class="tag">Скоро · Первая история</span>
+          <h3>Лица Свитино</h3>
+          <p>Первый герой нашего проекта появится здесь совсем скоро.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея героев -->
+  <section class="content" style="background:var(--sand);">
+    <div class="wrap">
       <h2>Герои наших историй</h2>
-      <p class="lead-in">Герои наших сюжетов — жители, чьи дела и судьбы составляют живую летопись Свитино. Первые истории скоро появятся здесь. <a href="contacts.html">Знаете такого человека?</a></p>
+      <p class="lead-in">Жители, чьи дела и судьбы составляют живую летопись Свитино. <a href="contacts.html">Знаете такого человека?</a></p>
       <div class="grid-cards">
-        <article class="card-lite card-person is-soon"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
-        <article class="card-lite card-person is-soon"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
-        <article class="card-lite card-person is-soon"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
+        <article class="card-lite card-person is-soon reveal"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
+        <article class="card-lite card-person is-soon reveal"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
+        <article class="card-lite card-person is-soon reveal"><div class="avatar" aria-hidden="true">👤</div><span class="tag">Герой истории</span><h3>Скоро</h3><p>История этого героя появится в ближайшее время.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Архив · тогда -->
+  <section class="content">
+    <div class="wrap">
+      <div class="memory-grid">
+        <div class="memory-media reveal">
+          <img src="img/archive-gallery.jpg" alt="Чёрно-белые архивные фотографии Свитино на габионной стене">
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Архив · тогда</p>
+          <h2 style="color:var(--green-deep);margin-bottom:1rem;">Свитино, каким оно было</h2>
+          <p style="color:var(--ink-soft);margin-bottom:1.4rem;max-width:54ch;">Чёрно-белая летопись посёлка — старые виды, лица и моменты, собранные на стене памяти. Если у вас сохранились старые фотографии Свитино — поделитесь, мы добавим их в архив.</p>
+          <a href="contacts.html" class="btn btn-dark">Поделиться фото</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <h2 class="reveal">Знаете героя Свитино?</h2>
+      <p class="reveal">Человек с интересной судьбой, ветеран, мастер своего дела или просто хороший сосед — расскажите о нём, и мы сделаем выпуск.</p>
+      <div class="hero-actions reveal" style="justify-content:center;">
+        <a href="contacts.html" class="btn btn-primary">Рассказать о герое</a>
       </div>
     </div>
   </section>
@@ -78,5 +122,13 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
 </body>
 </html>
